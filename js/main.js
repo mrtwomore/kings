@@ -291,12 +291,25 @@ function initHeaderScroll() {
             header.classList.add('scrolled');
         }
         
-        // Update on scroll
+        // Add throttling to improve performance
+        let lastScrollPosition = 0;
+        let ticking = false;
+        
+        // Update on scroll with throttling for better performance
         window.addEventListener('scroll', function() {
-            if (window.scrollY > scrollThreshold) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
+            lastScrollPosition = window.scrollY;
+            
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    if (lastScrollPosition > scrollThreshold) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                    ticking = false;
+                });
+                
+                ticking = true;
             }
         });
     }
