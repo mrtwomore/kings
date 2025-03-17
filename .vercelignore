@@ -1,0 +1,17 @@
+# Ignore backup and old project folders
+nextjs-backup
+php-version-backup
+clean-project
+backup
+kings-electrical
+.git
+.cursor
+scripts
+public
+components
+
+# Ignore backup files
+*.bak
+convert*
+test-index.html
+serve.py 

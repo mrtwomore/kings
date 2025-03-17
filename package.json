@@ -1,0 +1,11 @@
+{
+  "name": "kings-electrical-static-site",
+  "version": "1.0.0",
+  "description": "Kings Electrical Static Website",
+  "scripts": {
+    "build": "echo 'Static site, no build required'"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+} 
