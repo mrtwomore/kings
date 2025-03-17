@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
+    <meta name="theme-color" content="#FF6B35">
+    <title>You're Offline | Kings Electrical</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f8f8;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .offline-container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+        
+        .offline-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 30px;
+            background-color: rgba(255, 107, 53, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .offline-icon svg {
+            width: 50px;
+            height: 50px;
+            fill: #FF6B35;
+        }
+        
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        p {
+            margin-bottom: 30px;
+            color: #666;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #FF6B35;
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn:hover {
+            background-color: #e55a2a;
+        }
+        
+        .cached-content {
+            margin-top: 40px;
+            text-align: left;
+            border-top: 1px solid #eee;
+            padding-top: 30px;
+        }
+        
+        .cached-content h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .cached-links {
+            list-style: none;
+        }
+        
+        .cached-links li {
+            margin-bottom: 10px;
+        }
+        
+        .cached-links a {
+            color: #FF6B35;
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: rgba(255, 107, 53, 0.05);
+            transition: background-color 0.3s ease;
+        }
+        
+        .cached-links a:hover {
+            background-color: rgba(255, 107, 53, 0.1);
+        }
+        
+        @media (max-width: 480px) {
+            .offline-container {
+                padding: 30px 15px;
+                margin-top: 30px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .offline-icon {
+                width: 80px;
+                height: 80px;
+                margin-bottom: 20px;
+            }
+            
+            .offline-icon svg {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="offline-container">
+        <div class="offline-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
+            </svg>
+        </div>
+        
+        <h1>You're Offline</h1>
+        <p>It looks like you've lost your internet connection. Some features may be unavailable until you're back online.</p>
+        
+        <button class="btn" id="refresh-btn">Try Again</button>
+        
+        <div class="cached-content">
+            <h2>Available Offline</h2>
+            <p>You can still access these pages while offline:</p>
+            <ul class="cached-links" id="cached-pages">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about.html">About Us</a></li>
+                <li><a href="/services.html">Services</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <script>
+        // Refresh button functionality
+        document.getElementById('refresh-btn').addEventListener('click', function() {
+            window.location.reload();
+        });
+        
+        // Check if we're online and redirect if so
+        window.addEventListener('online', function() {
+            window.location.reload();
+        });
+        
+        // Dynamically populate cached pages if possible
+        if ('caches' in window) {
+            caches.open('kings-electrical-v1').then(function(cache) {
+                cache.keys().then(function(requests) {
+                    const cachedPages = requests
+                        .filter(request => request.url.endsWith('.html') && !request.url.includes('offline.html'))
+                        .map(request => {
+                            const url = new URL(request.url);
+                            return {
+                                path: url.pathname,
+                                name: url.pathname === '/' ? 'Home' : url.pathname.split('/').pop().replace('.html', '').replace(/-/g, ' ')
+                            };
+                        });
+                    
+                    if (cachedPages.length > 0) {
+                        const cachedPagesList = document.getElementById('cached-pages');
+                        cachedPagesList.innerHTML = '';
+                        
+                        cachedPages.forEach(page => {
+                            const li = document.createElement('li');
+                            const a = document.createElement('a');
+                            a.href = page.path;
+                            a.textContent = page.name.charAt(0).toUpperCase() + page.name.slice(1);
+                            li.appendChild(a);
+                            cachedPagesList.appendChild(li);
+                        });
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+</html> 

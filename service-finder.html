@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution Finder | Kings Electrical</title>
+    <meta name="description" content="Find the perfect electrical solution for your needs with our interactive tool. No technical knowledge required.">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Additional styles for Solution Finder */
+        .solution-finder-section {
+            padding: 60px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .finder-intro {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            text-align: center;
+        }
+        
+        .finder-container {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .finder-steps {
+            margin-bottom: 30px;
+        }
+        
+        .step-indicators {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .step-indicators::before {
+            content: '';
+            position: absolute;
+            top: 14px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #ddd;
+            z-index: 1;
+        }
+        
+        .step-indicator {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #fff;
+            border: 2px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .step-indicator.active {
+            background: #ee7203;
+            border-color: #ee7203;
+            color: white;
+        }
+        
+        .step-indicator.completed {
+            background: #4CAF50;
+            border-color: #4CAF50;
+            color: white;
+        }
+        
+        .step-content {
+            display: none;
+        }
+        
+        .step-content.active {
+            display: block;
+        }
+        
+        .concern-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .concern-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .concern-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .concern-card.selected {
+            border-color: #ee7203;
+            background-color: rgba(238, 114, 3, 0.05);
+        }
+        
+        .concern-card-icon {
+            color: #ee7203;
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        
+        .property-types,
+        .budget-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .property-type,
+        .budget-option {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .property-type:hover,
+        .budget-option:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .property-type.selected,
+        .budget-option.selected {
+            border-color: #ee7203;
+            background-color: rgba(238, 114, 3, 0.05);
+        }
+        
+        .solution-result {
+            display: none;
+            background: #f0f8ff;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        
+        .solution-result.active {
+            display: block;
+        }
+        
+        .solution-header {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 15px;
+        }
+        
+        .solution-service {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .solution-service h4 {
+            color: #ee7203;
+            margin-bottom: 10px;
+        }
+        
+        .solution-benefits {
+            margin-top: 15px;
+        }
+        
+        .solution-benefits ul {
+            padding-left: 20px;
+        }
+        
+        .solution-benefits li {
+            margin-bottom: 5px;
+        }
+        
+        .finder-actions {
+            margin-top: 25px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        @media (max-width: 768px) {
+            .finder-actions {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .finder-actions button {
+                width: 100%;
+            }
+        }
+        
+        .finder-actions button {
+            padding: 12px 25px;
+        }
+        
+        .finder-actions .btn-prev {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu Overlay -->
+    <div class="menu-overlay"></div>
+    
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" class="logo">
+                    <img src="images/Capture-One-Catalog0815.jpg" alt="Kings Electrical Logo">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="has-dropdown">
+                        <a href="services.html">Services</a>
+                        <ul class="dropdown">
+                            <li><a href="services/heat-pump-solutions.html">Heat Pump Solutions</a></li>
+                            <li><a href="services/electrical-services.html">Electrical Services</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-contact">
+                <a href="tel:+6433771546" class="phone-number"><i class="fas fa-phone"></i> 03 377 1546</a>
+                <a href="contact.html" class="btn btn-primary"><span>Contact Us</span></a>
+                <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Solution Finder Section -->
+    <section class="solution-finder-section">
+        <div class="container">
+            <div class="finder-intro">
+                <h1>Find Your Perfect Electrical Solution</h1>
+                <p>Not sure what electrical service you need? Answer a few simple questions and we'll recommend the best solutions for your specific situation. No technical knowledge required!</p>
+            </div>
+            
+            <div class="finder-container">
+                <div class="finder-steps">
+                    <div class="step-indicators">
+                        <div class="step-indicator active" data-step="1">1</div>
+                        <div class="step-indicator" data-step="2">2</div>
+                        <div class="step-indicator" data-step="3">3</div>
+                        <div class="step-indicator" data-step="4">4</div>
+                    </div>
+                    
+                    <!-- Step 1: Main Concern -->
+                    <div class="step-content active" data-step="1">
+                        <h2>What's your main concern?</h2>
+                        <p>Select the option that best describes what brought you here today.</p>
+                        
+                        <div class="concern-cards">
+                            <div class="concern-card" data-concern="safety">
+                                <div class="concern-card-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <h3>Safety Concerns</h3>
+                                <p>Frequent circuit breaker trips, flickering lights, burning smells, or outdated wiring.</p>
+                            </div>
+                            
+                            <div class="concern-card" data-concern="efficiency">
+                                <div class="concern-card-icon">
+                                    <i class="fas fa-bolt"></i>
+                                </div>
+                                <h3>Energy Efficiency</h3>
+                                <p>High power bills, inefficient heating/cooling, or wanting to reduce energy consumption.</p>
+                            </div>
+                            
+                            <div class="concern-card" data-concern="renovation">
+                                <div class="concern-card-icon">
+                                    <i class="fas fa-home"></i>
+                                </div>
+                                <h3>Renovation/Upgrade</h3>
+                                <p>Planning a renovation, new addition, or upgrading outdated electrical systems.</p>
+                            </div>
+                            
+                            <div class="concern-card" data-concern="comfort">
+                                <div class="concern-card-icon">
+                                    <i class="fas fa-temperature-low"></i>
+                                </div>
+                                <h3>Comfort Issues</h3>
+                                <p>Home too hot/cold, poor temperature control, or inadequate heating/cooling systems.</p>
+                            </div>
+                            
+                            <div class="concern-card" data-concern="commercial">
+                                <div class="concern-card-icon">
+                                    <i class="fas fa-building"></i>
+                                </div>
+                                <h3>Commercial Needs</h3>
+                                <p>Electrical solutions for your business, office, or commercial property.</p>
+                            </div>
+                            
+                            <div class="concern-card" data-concern="emergency">
+                                <div class="concern-card-icon">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <h3>Electrical Emergency</h3>
+                                <p>Power outage, electrical failure, or potentially dangerous electrical issue.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2: Property Type -->
+                    <div class="step-content" data-step="2">
+                        <h2>What type of property do you have?</h2>
+                        <p>This helps us recommend solutions specifically for your property type.</p>
+                        
+                        <div class="property-types">
+                            <div class="property-type" data-property="house">
+                                <i class="fas fa-home fa-2x mb-3"></i>
+                                <h3>House</h3>
+                            </div>
+                            
+                            <div class="property-type" data-property="apartment">
+                                <i class="fas fa-building fa-2x mb-3"></i>
+                                <h3>Apartment/Unit</h3>
+                            </div>
+                            
+                            <div class="property-type" data-property="office">
+                                <i class="fas fa-briefcase fa-2x mb-3"></i>
+                                <h3>Office</h3>
+                            </div>
+                            
+                            <div class="property-type" data-property="retail">
+                                <i class="fas fa-store fa-2x mb-3"></i>
+                                <h3>Retail</h3>
+                            </div>
+                            
+                            <div class="property-type" data-property="industrial">
+                                <i class="fas fa-industry fa-2x mb-3"></i>
+                                <h3>Industrial</h3>
+                            </div>
+                            
+                            <div class="property-type" data-property="other">
+                                <i class="fas fa-ellipsis-h fa-2x mb-3"></i>
+                                <h3>Other</h3>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3: Budget Range -->
+                    <div class="step-content" data-step="3">
+                        <h2>What's your budget range?</h2>
+                        <p>This helps us recommend solutions that fit your financial considerations.</p>
+                        
+                        <div class="budget-options">
+                            <div class="budget-option" data-budget="essential">
+                                <h3>Essential</h3>
+                                <p>Focused on necessary fixes and basic solutions</p>
+                            </div>
+                            
+                            <div class="budget-option" data-budget="standard">
+                                <h3>Standard</h3>
+                                <p>Quality solutions with good value</p>
+                            </div>
+                            
+                            <div class="budget-option" data-budget="premium">
+                                <h3>Premium</h3>
+                                <p>High-end solutions with additional features</p>
+                            </div>
+                            
+                            <div class="budget-option" data-budget="unsure">
+                                <h3>Not Sure</h3>
+                                <p>Need guidance on costs</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 4: Results -->
+                    <div class="step-content" data-step="4">
+                        <h2>Recommended Solutions</h2>
+                        <p>Based on your needs, here are the services we recommend:</p>
+                        
+                        <div id="safety-result" class="solution-result">
+                            <div class="solution-header">
+                                <h3>Safety Solutions</h3>
+                                <p>Address your safety concerns with these expert services:</p>
+                            </div>
+                            
+                            <div class="solution-service">
+                                <h4>Electrical Safety Inspection</h4>
+                                <p>A comprehensive assessment of your electrical system to identify potential hazards and code violations.</p>
+                                <div class="solution-benefits">
+                                    <h5>Benefits:</h5>
+                                    <ul>
+                                        <li>Identify hidden electrical hazards</li>
+                                        <li>Prevent electrical fires and shocks</li>
+                                        <li>Detailed report with recommendations</li>
+                                        <li>Peace of mind for you and your family</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="solution-service">
+                                <h4>Circuit Breaker Upgrades</h4>
+                                <p>Replace outdated or malfunctioning circuit breakers to prevent overloads and electrical fires.</p>
+                                <div class="solution-benefits">
+                                    <h5>Benefits:</h5>
+                                    <ul>
+                                        <li>Enhanced electrical safety</li>
+                                        <li>Prevent frequent tripping</li>
+                                        <li>Support for modern power needs</li>
+                                        <li>Modern safety features like arc fault protection</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="solution-service">
+                                <h4>Wiring Replacement</h4>
+                                <p>Replace old, damaged, or outdated wiring systems that pose safety risks.</p>
+                                <div class="solution-benefits">
+                                    <h5>Benefits:</h5>
+                                    <ul>
+                                        <li>Eliminate fire hazards from old wiring</li>
+                                        <li>Improve system reliability</li>
+                                        <li>Support modern electrical demands</li>
+                                        <li>Meet current electrical codes and standards</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="efficiency-result" class="solution-result">
+                            <div class="solution-header">
+                                <h3>Energy Efficiency Solutions</h3>
+                                <p>Reduce your energy consumption and lower your power bills:</p>
+                            </div>
+                            
+                            <div class="solution-service">
+                                <h4>Energy Audit & Optimization</h4>
+                                <p>Comprehensive assessment of your electrical usage patterns with tailored recommendations for improvement.</p>
+                                <div class="solution-benefits">
+                                    <h5>Benefits:</h5>
+                                    <ul>
+                                        <li>Identify energy waste sources</li>
+                                        <li>Customized energy-saving recommendations</li>
+                                        <li>Potential for significant cost savings</li>
+                                        <li>Reduced environmental impact</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="solution-service">
+                                <h4>Energy-Efficient Heat Pump Installation</h4>
+                                <p>Replace inefficient heating/cooling systems with modern, energy-saving heat pump technology.</p>
+                                <div class="solution-benefits">
+                                    <h5>Benefits:</h5>
+                                    <ul>
+                                        <li>Up to 50% reduction in heating/cooling costs</li>
+                                        <li>Better temperature control and comfort</li>
+                                        <li>Environmentally friendly operation</li>
+                                        <li>Both heating and cooling in one system</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="solution-service">
+                                <h4>Smart Home Energy Management</h4>
+                                <p>Installation of smart systems to monitor and control your energy usage more efficiently.</p>
+                                <div class="solution-benefits">
+                                    <h5>Benefits:</h5>
+                                    <ul>
+                                        <li>Automated energy optimization</li>
+                                        <li>Remote control of electrical systems</li>
+                                        <li>Real-time energy usage monitoring</li>
+                                        <li>Integration with other smart home features</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Additional solution results would be added here -->
+                        
+                        <div class="cta-container text-center" style="margin-top: 30px;">
+                            <h3>Ready to implement these solutions?</h3>
+                            <div class="cta-buttons">
+                                <a href="consultation.html" class="btn btn-primary"><span>Book a Free Consultation</span></a>
+                                <a href="project-planner.html" class="btn btn-secondary"><span>Plan Your Project</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="finder-actions">
+                    <button class="btn btn-prev" id="prev-step" style="display: none;"><span>Previous Step</span></button>
+                    <button class="btn btn-primary" id="next-step"><span>Next Step</span></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="about.html#team">Our Team</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="services/commercial-electrical.html">Commercial Electrical</a></li>
+                        <li><a href="services/residential-electrical.html">Residential Electrical</a></li>
+                        <li><a href="services/heat-pump-solutions.html">Heat Pump Solutions</a></li>
+                        <li><a href="services/emergency-services.html">Emergency Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul class="contact-details">
+                        <li><i class="fas fa-phone"></i> <a href="tel:+6433771546">03 377 1546</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@kingselectrical.co.nz">info@kingselectrical.co.nz</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Main Street, Christchurch</li>
+                    </ul>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Kings Electrical. All rights reserved.</p>
+                <ul class="footer-links">
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms-of-service.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Variables
+        const nextBtn = document.getElementById('next-step');
+        const prevBtn = document.getElementById('prev-step');
+        const stepIndicators = document.querySelectorAll('.step-indicator');
+        const stepContents = document.querySelectorAll('.step-content');
+        const concernCards = document.querySelectorAll('.concern-card');
+        const propertyTypes = document.querySelectorAll('.property-type');
+        const budgetOptions = document.querySelectorAll('.budget-option');
+        const solutionResults = document.querySelectorAll('.solution-result');
+        
+        let currentStep = 1;
+        let selectedConcern = '';
+        let selectedProperty = '';
+        let selectedBudget = '';
+        
+        // Initialize step navigation
+        function goToStep(step) {
+            // Hide all steps
+            stepContents.forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Update indicators
+            stepIndicators.forEach(indicator => {
+                const indicatorStep = parseInt(indicator.dataset.step);
+                indicator.classList.remove('active', 'completed');
+                
+                if (indicatorStep === step) {
+                    indicator.classList.add('active');
+                } else if (indicatorStep < step) {
+                    indicator.classList.add('completed');
+                }
+            });
+            
+            // Show current step
+            document.querySelector(`.step-content[data-step="${step}"]`).classList.add('active');
+            
+            // Update buttons
+            if (step > 1) {
+                prevBtn.style.display = 'block';
+            } else {
+                prevBtn.style.display = 'none';
+            }
+            
+            if (step === 4) {
+                nextBtn.style.display = 'none';
+                showResults();
+            } else {
+                nextBtn.style.display = 'block';
+            }
+            
+            currentStep = step;
+        }
+        
+        // Handle next button click
+        nextBtn.addEventListener('click', function() {
+            // Validate current step
+            let canProceed = true;
+            
+            switch(currentStep) {
+                case 1:
+                    if (!selectedConcern) {
+                        alert('Please select your main concern');
+                        canProceed = false;
+                    }
+                    break;
+                case 2:
+                    if (!selectedProperty) {
+                        alert('Please select your property type');
+                        canProceed = false;
+                    }
+                    break;
+                case 3:
+                    if (!selectedBudget) {
+                        alert('Please select your budget range');
+                        canProceed = false;
+                    }
+                    break;
+            }
+            
+            if (canProceed) {
+                goToStep(currentStep + 1);
+            }
+        });
+        
+        // Handle previous button click
+        prevBtn.addEventListener('click', function() {
+            goToStep(currentStep - 1);
+        });
+        
+        // Handle concern selection
+        concernCards.forEach(card => {
+            card.addEventListener('click', function() {
+                // Remove previous selection
+                concernCards.forEach(c => c.classList.remove('selected'));
+                
+                // Add selected class
+                this.classList.add('selected');
+                
+                // Store selection
+                selectedConcern = this.dataset.concern;
+            });
+        });
+        
+        // Handle property type selection
+        propertyTypes.forEach(property => {
+            property.addEventListener('click', function() {
+                // Remove previous selection
+                propertyTypes.forEach(p => p.classList.remove('selected'));
+                
+                // Add selected class
+                this.classList.add('selected');
+                
+                // Store selection
+                selectedProperty = this.dataset.property;
+            });
+        });
+        
+        // Handle budget selection
+        budgetOptions.forEach(budget => {
+            budget.addEventListener('click', function() {
+                // Remove previous selection
+                budgetOptions.forEach(b => b.classList.remove('selected'));
+                
+                // Add selected class
+                this.classList.add('selected');
+                
+                // Store selection
+                selectedBudget = this.dataset.budget;
+            });
+        });
+        
+        // Show appropriate results based on selections
+        function showResults() {
+            // Hide all results first
+            solutionResults.forEach(result => {
+                result.classList.remove('active');
+            });
+            
+            // Show result based on main concern
+            const resultElement = document.getElementById(`${selectedConcern}-result`);
+            if (resultElement) {
+                resultElement.classList.add('active');
+            } else {
+                // If specific result not found, show efficiency by default
+                document.getElementById('efficiency-result').classList.add('active');
+            }
+        }
+    });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Testimonials | Kings Electrical</title>
+    <meta name="description" content="Read what our clients say about Kings Electrical's services. Real reviews from satisfied customers in Christchurch.">
+    
+    <!-- Favicon and Touch Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/public/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/public/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/public/icons/favicon-16x16.png">
+    <link rel="manifest" href="/public/icons/site.webmanifest">
+    <link rel="shortcut icon" href="/favicon.ico">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'" crossorigin>
+
+    <style>
+        /* Additional styles for testimonials page */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 40px 0;
+        }
+
+        .testimonial-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 15px;
+            overflow: hidden;
+        }
+
+        .testimonial-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .testimonial-author {
+            flex-grow: 1;
+        }
+
+        .author-name {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .author-location {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .testimonial-rating {
+            color: #FF6B35;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-text {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .testimonial-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #777;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        .testimonial-service {
+            display: inline-block;
+            padding: 3px 12px;
+            background: rgba(255, 107, 53, 0.1);
+            color: #FF6B35;
+            border-radius: 15px;
+            font-size: 0.85rem;
+        }
+
+        .testimonial-date {
+            color: #999;
+        }
+
+        .testimonial-quote {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 3rem;
+            color: rgba(255, 107, 53, 0.1);
+        }
+
+        .stats-section {
+            background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
+            padding: 60px 0;
+            margin-bottom: 40px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-card {
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #FF6B35;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: #555;
+            font-size: 1.1rem;
+        }
+
+        .review-filters {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .review-filter {
+            padding: 8px 20px;
+            border: 2px solid #FF6B35;
+            border-radius: 25px;
+            color: #FF6B35;
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .review-filter:hover,
+        .review-filter.active {
+            background: #FF6B35;
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                padding: 20px 0;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .review-filters {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 0 20px;
+            }
+
+            .review-filter {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" class="logo">
+                    <img src="images/Capture-One-Catalog0815.jpg" alt="Kings Electrical Logo">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="has-dropdown">
+                        <a href="services.html">Services</a>
+                        <ul class="dropdown">
+                            <li><a href="services/heat-pump-solutions.html">Heat Pump Solutions</a></li>
+                            <li><a href="services/electrical-services.html">Electrical Services</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="contact.html" class="btn btn-primary"><span>Contact Us</span></a>
+            <button class="mobile-menu-toggle">
+                <span class="sr-only">Menu</span>
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="hero-section" style="padding: 80px 0;">
+            <div class="container">
+                <h1>Client Testimonials</h1>
+                <p>Read what our satisfied customers have to say about our services</p>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Happy Clients</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">4.9</div>
+                        <div class="stat-label">Average Rating</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">Satisfaction Rate</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="review-filters">
+                <button class="review-filter active">All Reviews</button>
+                <button class="review-filter">Heat Pumps</button>
+                <button class="review-filter">Electrical</button>
+                <button class="review-filter">Commercial</button>
+                <button class="review-filter">Residential</button>
+            </div>
+
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-quote"><i class="fas fa-quote-right"></i></div>
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <img src="images/Capture-One-Catalog0317.jpg" alt="Client Avatar">
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-name">Sarah Johnson</div>
+                            <div class="author-location">Merivale, Christchurch</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        "Excellent service from start to finish. The team installed our heat pump efficiently and professionally. They were clean, tidy, and explained everything clearly."
+                    </div>
+                    <div class="testimonial-meta">
+                        <span class="testimonial-service">Heat Pump Installation</span>
+                        <span class="testimonial-date">March 2024</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-quote"><i class="fas fa-quote-right"></i></div>
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <img src="images/Capture-One-Catalog0477.jpg" alt="Client Avatar">
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-name">Mike Thompson</div>
+                            <div class="author-location">CBD, Christchurch</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        "Kings Electrical did an amazing job with our office electrical upgrade. Their commercial team was professional and completed the work with minimal disruption to our business."
+                    </div>
+                    <div class="testimonial-meta">
+                        <span class="testimonial-service">Commercial Electrical</span>
+                        <span class="testimonial-date">February 2024</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-quote"><i class="fas fa-quote-right"></i></div>
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <img src="images/Capture-One-Catalog0529.jpg" alt="Client Avatar">
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-name">Emma Wilson</div>
+                            <div class="author-location">Fendalton, Christchurch</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        "Had an electrical emergency late at night, and Kings Electrical responded within 30 minutes. They fixed the issue quickly and professionally. Highly recommend their emergency service!"
+                    </div>
+                    <div class="testimonial-meta">
+                        <span class="testimonial-service">Emergency Service</span>
+                        <span class="testimonial-date">March 2024</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-quote"><i class="fas fa-quote-right"></i></div>
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <img src="images/Capture-One-Catalog0559.jpg" alt="Client Avatar">
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-name">David Chen</div>
+                            <div class="author-location">Riccarton, Christchurch</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        "Great experience with Kings Electrical for our home renovation. They helped us plan and implement modern electrical solutions that really improved our home's functionality."
+                    </div>
+                    <div class="testimonial-meta">
+                        <span class="testimonial-service">Residential Electrical</span>
+                        <span class="testimonial-date">January 2024</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section section-padding">
+            <div class="container">
+                <h2>Ready to Experience Our Service?</h2>
+                <p>Join our satisfied customers and let us help with your electrical needs.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary"><span>Get a Quote</span></a>
+                    <a href="consultation.html" class="btn btn-secondary"><span>Book a Consultation</span></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="services/commercial-electrical.html">Commercial Electrical</a></li>
+                        <li><a href="services/residential-electrical.html">Residential Electrical</a></li>
+                        <li><a href="services/heat-pump-solutions.html">Heat Pump Solutions</a></li>
+                        <li><a href="services/emergency-services.html">Emergency Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul class="contact-details">
+                        <li><i class="fas fa-phone"></i> <a href="tel:+6433771546">03 377 1546</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@kings.co.nz">info@kings.co.nz</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> Christchurch, NZ</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Kings Electrical. All rights reserved.</p>
+                <ul class="footer-links">
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms-of-service.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script>
+        // Review filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.review-filter');
+            const testimonialCards = document.querySelectorAll('.testimonial-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+
+                    const filter = this.textContent.toLowerCase();
+
+                    testimonialCards.forEach(card => {
+                        const service = card.querySelector('.testimonial-service').textContent.toLowerCase();
+                        if (filter === 'all reviews' || service.includes(filter)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

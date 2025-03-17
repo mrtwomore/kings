@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Electrical Services Christchurch | 24/7 Expert Solutions</title>
+    <meta name="description" content="Trusted residential & commercial electrical services in Christchurch. From emergency repairs to complete installations, our certified electricians deliver guaranteed results.">
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Additional styles for Service page */
+        .service-hero {
+            background-color: #f9f9f9;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .service-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .service-hero h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .service-hero p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+        
+        .service-section {
+            padding: 60px 0;
+        }
+        
+        .service-section:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .service-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        @media (max-width: 768px) {
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .service-image {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .service-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .service-content h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .service-content p {
+            margin-bottom: 20px;
+        }
+        
+        .service-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 25px;
+        }
+        
+        .service-features li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 12px;
+        }
+        
+        .service-features li:before {
+            content: '\f00c';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            color: #FF6B35;
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+        
+        .pricing-section {
+            padding: 60px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .pricing-intro {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            text-align: center;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .pricing-card {
+            background: #fff;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+        
+        .pricing-card h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .pricing-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #FF6B35;
+            margin-bottom: 20px;
+        }
+        
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+        
+        .pricing-features li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 12px;
+        }
+        
+        .pricing-features li:before {
+            content: '\f00c';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            color: #FF6B35;
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+        
+        .pricing-note {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 15px;
+        }
+        
+        .process-section {
+            padding: 60px 0;
+        }
+        
+        .process-intro {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            text-align: center;
+        }
+        
+        .process-steps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .process-step {
+            flex: 1;
+            min-width: 250px;
+            max-width: 350px;
+            background: #fff;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            text-align: center;
+            position: relative;
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: #FF6B35;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 20px;
+        }
+        
+        .process-step h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .testimonials-section {
+            padding: 60px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .testimonials-intro {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            text-align: center;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background: #fff;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .testimonial-content:before {
+            content: '\f10d';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            color: rgba(255, 107, 53, 0.1);
+            font-size: 2rem;
+            position: absolute;
+            left: -10px;
+            top: -15px;
+        }
+        
+        .testimonial-client {
+            display: flex;
+            align-items: center;
+        }
+        
+        .client-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+        
+        .client-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .client-info h4 {
+            margin: 0 0 5px;
+            font-size: 1.1rem;
+        }
+        
+        .client-info p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .faq-section {
+            padding: 60px 0;
+        }
+        
+        .faq-intro {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            text-align: center;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+        
+        .faq-question:hover {
+            background-color: rgba(255, 107, 53, 0.05);
+        }
+        
+        .faq-question i {
+            color: #FF6B35;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.active .faq-question {
+            background-color: rgba(255, 107, 53, 0.05);
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 0 20px 20px;
+            max-height: 500px;
+        }
+        
+        .btn-primary {
+            background-color: #FF6B35;
+            color: #fff;
+            border: none;
+            padding: 14px 28px;
+            font-size: 1.05rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 8px 15px rgba(255, 107, 53, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(255, 107, 53, 0.4);
+        }
+        
+        .btn-secondary {
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #FF6B35;
+            border: 2px solid #FF6B35;
+            padding: 12px 26px;
+            font-size: 1.05rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.15);
+        }
+        
+        .btn-secondary:hover {
+            background-color: #FF6B35;
+            color: #fff;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 107, 53, 0.25);
+        }
+        
+        .cta-button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #FF6B35;
+            border-radius: 2px;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #FF6B35 0%, #FF9E70 100%);
+            color: #fff;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .site-footer {
+            background: #f8f8f8;
+            padding: 60px 0 30px;
+            border-top: 5px solid #FF6B35;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo {
+            max-width: 200px;
+        }
+
+        .footer-logo img {
+            width: 100%;
+            height: auto;
+            max-height: 80px;
+            object-fit: contain;
+        }
+
+        .footer-contact h3,
+        .footer-hours h3,
+        .footer-social h3 {
+            color: #333;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-contact h3:after,
+        .footer-hours h3:after,
+        .footer-social h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: #FF6B35;
+            border-radius: 2px;
+        }
+
+        .footer-contact p,
+        .footer-hours p {
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .footer-contact a {
+            color: #FF6B35;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-contact a:hover {
+            color: #FF9E70;
+        }
+
+        .footer-contact i {
+            color: #FF6B35;
+            width: 20px;
+            margin-right: 10px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            background: #FF6B35;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background: #FF9E70;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 107, 53, 0.1);
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-bottom p {
+            color: #666;
+            margin: 0;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-links a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #FF6B35;
+        }
+
+        @media (max-width: 768px) {
+            .footer-top {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-logo {
+                margin: 0 auto;
+            }
+
+            .footer-contact h3:after,
+            .footer-hours h3:after,
+            .footer-social h3:after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu Overlay -->
+    <div class="menu-overlay"></div>
+    
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html" class="logo">
+                    <img src="../images/Capture-One-Catalog0815.jpg" alt="Kings Electrical Logo">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li class="has-dropdown">
+                        <a href="../services.html" class="active">Services</a>
+                        <ul class="dropdown">
+                            <li><a href="heat-pump-solutions.html">Heat Pump Solutions</a></li>
+                            <li><a href="electrical-services.html" class="active">Electrical Services</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../about.html">About Us</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-contact">
+                <a href="tel:+6433771546" class="phone-number"><i class="fas fa-phone"></i> 03 377 1546</a>
+                <a href="../contact.html" class="btn btn-primary"><span>Contact Us</span></a>
+                <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Service Hero Section -->
+    <section class="service-hero">
+        <div class="container">
+            <div class="service-hero-content">
+                <h1>Professional Electrical Services</h1>
+                <p>Comprehensive electrical solutions for residential and commercial properties in Christchurch. From repairs and installations to upgrades and maintenance.</p>
+                <a href="../contact.html" class="btn btn-primary"><span>Request a Quote</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Residential Electrical Services Section -->
+    <section class="service-section">
+        <div class="container">
+            <div class="service-grid">
+                <div class="service-image">
+                    <img src="../images/Capture-One-Catalog0317.jpg" alt="Residential Electrical Services">
+                </div>
+                <div class="service-content">
+                    <h2>Residential Electrical Services</h2>
+                    <p>We provide a complete range of electrical services for homeowners in Christchurch. Whether you need new installations, repairs, or upgrades, our team of certified electricians is equipped to handle projects of any size.</p>
+                    <ul class="service-features">
+                        <li>Complete home rewiring</li>
+                        <li>Power point installation and repairs</li>
+                        <li>Lighting design and installation</li>
+                        <li>Switchboard upgrades and repairs</li>
+                        <li>Safety switches and surge protection</li>
+                        <li>Electrical safety inspections</li>
+                        <li>Appliance installation</li>
+                        <li>Home automation and smart home systems</li>
+                    </ul>
+                    <p>Our residential electrical services are designed to ensure your home is safe, energy-efficient, and equipped with modern electrical systems that meet your family's needs.</p>
+                    <a href="../contact.html" class="btn btn-primary"><span>Book a Service</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Commercial Electrical Services Section -->
+    <section class="service-section">
+        <div class="container">
+            <div class="service-grid">
+                <div class="service-content">
+                    <h2>Commercial Electrical Services</h2>
+                    <p>Keep your business running smoothly with our professional commercial electrical services. We understand that electrical issues can disrupt operations, which is why we provide prompt, reliable solutions for businesses of all sizes.</p>
+                    <ul class="service-features">
+                        <li>Commercial fit-outs and new installations</li>
+                        <li>Office and retail lighting solutions</li>
+                        <li>Data cabling and network infrastructure</li>
+                        <li>Emergency lighting and exit sign installation</li>
+                        <li>Switchboard upgrades and maintenance</li>
+                        <li>Power distribution systems</li>
+                        <li>Energy efficiency audits and solutions</li>
+                        <li>Preventative maintenance programs</li>
+                    </ul>
+                    <p>Our commercial electricians are experienced in working with businesses across various industries, ensuring minimal disruption to your operations during service visits.</p>
+                    <a href="../contact.html" class="btn btn-primary"><span>Request Commercial Service</span></a>
+                </div>
+                <div class="service-image">
+                    <img src="../images/Capture-One-Catalog0508-1.jpg" alt="Commercial Electrical Services">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Electrical Services Section -->
+    <section class="service-section">
+        <div class="container">
+            <div class="service-grid">
+                <div class="service-image">
+                    <img src="../images/Capture-One-Catalog0559.jpg" alt="Emergency Electrical Services">
+                </div>
+                <div class="service-content">
+                    <h2>Emergency Electrical Services</h2>
+                    <p>Electrical emergencies can occur at any time, and when they do, you need fast, reliable service. Kings Electrical offers 24/7 emergency electrical services throughout Christchurch and surrounding areas.</p>
+                    <ul class="service-features">
+                        <li>24/7 emergency response</li>
+                        <li>Power outage troubleshooting</li>
+                        <li>Electrical fault detection and repair</li>
+                        <li>Circuit breaker trips and fuse replacements</li>
+                        <li>Electrical fire safety inspections</li>
+                        <li>Storm damage repairs</li>
+                        <li>Emergency lighting restoration</li>
+                        <li>Temporary power solutions</li>
+                    </ul>
+                    <p>Our emergency electricians are always on standby, ready to respond quickly to your urgent electrical issues, ensuring your safety and peace of mind.</p>
+                    <a href="tel:+6433771546" class="btn btn-primary"><span>Call for Emergency Service</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specialized Electrical Services Section -->
+    <section class="service-section">
+        <div class="container">
+            <div class="service-grid">
+                <div class="service-content">
+                    <h2>Specialized Electrical Services</h2>
+                    <p>Beyond standard electrical work, we offer specialized services to address specific needs and enhance your property's functionality, safety, and energy efficiency.</p>
+                    <ul class="service-features">
+                        <li>LED lighting upgrades and retrofits</li>
+                        <li>Electrical vehicle (EV) charging stations</li>
+                        <li>Solar power system installation and maintenance</li>
+                        <li>Home theater and audio system wiring</li>
+                        <li>Security system installation</li>
+                        <li>Outdoor and landscape lighting</li>
+                        <li>Pool and spa electrical systems</li>
+                        <li>Energy monitoring and management systems</li>
+                    </ul>
+                    <p>Our specialized electrical services are performed by technicians with specific training and expertise in these areas, ensuring high-quality results for your unique requirements.</p>
+                    <a href="../contact.html" class="btn btn-primary"><span>Inquire About Specialized Services</span></a>
+                </div>
+                <div class="service-image">
+                    <img src="../images/Capture-One-Catalog0477.jpg" alt="Specialized Electrical Services">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <div class="process-intro">
+                <h2>Our Service Process</h2>
+                <p>We follow a structured approach to ensure every electrical project is completed efficiently, safely, and to your satisfaction.</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Initial Contact</h3>
+                    <p>Reach out to us by phone or through our online form. We'll discuss your electrical needs and schedule a convenient time for an assessment or service.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Assessment</h3>
+                    <p>Our licensed electrician will assess your electrical system, identify any issues, and provide expert recommendations for repairs or improvements.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Detailed Quote</h3>
+                    <p>You'll receive a comprehensive, transparent quote outlining the scope of work, materials needed, and total cost before any work begins.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Service Delivery</h3>
+                    <p>Our skilled electricians will complete the work efficiently, following all safety protocols and industry standards while respecting your property.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h3>Final Inspection</h3>
+                    <p>We conduct thorough testing and quality checks to ensure all electrical work meets our high standards and complies with regulations.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">6</div>
+                    <h3>Follow-Up</h3>
+                    <p>We'll follow up after the service to ensure you're completely satisfied and provide any additional support or guidance you may need.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="testimonials-intro">
+                <h2>What Our Clients Say</h2>
+                <p>Hear from customers who have experienced our electrical services firsthand.</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Kings Electrical rewired our entire home during a renovation. The team was professional, knowledgeable, and paid great attention to detail. They took the time to understand our needs and provided solutions that saved us money in the long run."</p>
+                    </div>
+                    <div class="testimonial-client">
+                        <div class="client-image">
+                            <img src="../images/Capture-One-Catalog0317.jpg" alt="Client">
+                        </div>
+                        <div class="client-info">
+                            <h4>David Thompson</h4>
+                            <p>Homeowner, Merivale</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"When we had an electrical emergency at our restaurant, Kings Electrical responded within an hour. They quickly identified the issue and had us back up and running before dinner service. Their 24/7 service is absolutely reliable."</p>
+                    </div>
+                    <div class="testimonial-client">
+                        <div class="client-image">
+                            <img src="../images/Capture-One-Catalog0477.jpg" alt="Client">
+                        </div>
+                        <div class="client-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>Restaurant Owner, Riccarton</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"We've used Kings Electrical for all our office electrical needs for over 5 years. Their commercial team understands the importance of minimal disruption to our business operations and always works efficiently around our schedule."</p>
+                    </div>
+                    <div class="testimonial-client">
+                        <div class="client-image">
+                            <img src="../images/Capture-One-Catalog0490-e1722552518279.jpg" alt="Client">
+                        </div>
+                        <div class="client-info">
+                            <h4>Michael Williams</h4>
+                            <p>Business Manager, Christchurch CBD</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="faq-intro">
+                <h2>Frequently Asked Questions</h2>
+                <p>Find answers to common questions about our electrical services.</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How often should I have my electrical system inspected?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We recommend having your home's electrical system professionally inspected every 3-5 years for newer homes and every 1-2 years for homes over 25 years old. Regular inspections help identify potential issues before they become serious problems and ensure your electrical system remains safe and efficient.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What are the signs that I need to upgrade my electrical panel?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Signs that indicate you may need an electrical panel upgrade include: frequently tripping circuit breakers, flickering lights, burning smells near the panel, buzzing sounds from outlets or switches, using numerous power strips or extension cords, having a panel older than 25 years, or planning significant home additions that will increase electrical demand.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you provide warranties for your electrical work?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, all our electrical work comes with a comprehensive workmanship warranty. We stand behind the quality of our service with a 12-month guarantee on labor. Additionally, any products or parts we install carry their respective manufacturer warranties. We're committed to ensuring your complete satisfaction with our work.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How long does a typical electrical service call take?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The duration of an electrical service call varies depending on the complexity of the issue. Simple repairs or installations might take 1-2 hours, while more complex projects like rewiring or panel upgrades can take a full day or more. During our initial assessment, we'll provide you with a time estimate specific to your project.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Are your electricians licensed and insured?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely. All our electricians are fully licensed, certified, and insured. We comply with all local and national electrical codes and regulations. Our team regularly participates in continuing education to stay current with the latest industry standards, safety practices, and technological advancements.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to get started?</h2>
+            <p>Contact our team today for a free quote on your electrical project.</p>
+            <div class="cta-button-container">
+                <a href="../contact.html" class="btn btn-primary"><span>Request a Quote</span></a>
+                <a href="tel:+6433771546" class="btn btn-secondary"><span>Call Us: 03 377 1546</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <img src="../images/Capture-One-Catalog0815.jpg" alt="Kings Electrical Logo">
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, Christchurch</p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+6433771546">03 377 1546</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@kingselectrical.co.nz">info@kingselectrical.co.nz</a></p>
+                </div>
+                <div class="footer-hours">
+                    <h3>Hours</h3>
+                    <p>Monday - Friday: 7:30am - 5:00pm</p>
+                    <p>Saturday: 8:00am - 1:00pm</p>
+                    <p>Sunday: Closed</p>
+                </div>
+                <div class="footer-social">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Kings Electrical. All rights reserved.</p>
+                <ul class="footer-links">
+                    <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="../terms-of-service.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', function() {
+                // Close all other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+    });
+    </script>
+</body>
+</html> 

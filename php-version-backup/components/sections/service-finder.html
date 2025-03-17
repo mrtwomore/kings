@@ -1,0 +1,110 @@
+<!-- Service Finder Component -->
+<section class="service-finder-section bg-light py-16">
+    <div class="container">
+        <div class="text-center mb-12">
+            <h2>Find Your Solution</h2>
+            <p class="text-lg text-gray-600">Answer a few quick questions to get personalized service recommendations.</p>
+        </div>
+
+        <div class="service-finder-container max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
+            <div class="step-indicators flex justify-center mb-8">
+                <button class="step-indicator active" data-step="1">1</button>
+                <button class="step-indicator" data-step="2">2</button>
+                <button class="step-indicator" data-step="3">3</button>
+                <button class="step-indicator" data-step="4">4</button>
+            </div>
+
+            <!-- Step 1: Property Type -->
+            <div id="step1" class="finder-step active">
+                <h3 class="text-2xl font-bold mb-6 text-center">What type of property do you have?</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <button class="option-card" data-value="residential">
+                        <i class="fas fa-home text-4xl mb-4"></i>
+                        <h4>Residential</h4>
+                        <p>Homes, apartments, and residential properties</p>
+                    </button>
+                    <button class="option-card" data-value="commercial">
+                        <i class="fas fa-building text-4xl mb-4"></i>
+                        <h4>Commercial</h4>
+                        <p>Offices, retail spaces, and commercial buildings</p>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 2: Service Type -->
+            <div id="step2" class="finder-step hidden">
+                <h3 class="text-2xl font-bold mb-6 text-center">What service do you need?</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <button class="option-card" data-value="electrical">
+                        <i class="fas fa-bolt text-4xl mb-4"></i>
+                        <h4>Electrical Services</h4>
+                        <p>General electrical work and installations</p>
+                    </button>
+                    <button class="option-card" data-value="heatpump">
+                        <i class="fas fa-snowflake text-4xl mb-4"></i>
+                        <h4>Heat Pump Solutions</h4>
+                        <p>Installation, service, and maintenance</p>
+                    </button>
+                    <button class="option-card" data-value="emergency">
+                        <i class="fas fa-exclamation-triangle text-4xl mb-4"></i>
+                        <h4>Emergency Service</h4>
+                        <p>Urgent electrical issues requiring immediate attention</p>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 3: Timing -->
+            <div id="step3" class="finder-step hidden">
+                <h3 class="text-2xl font-bold mb-6 text-center">When do you need this service?</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <button class="option-card" data-value="urgent">
+                        <i class="fas fa-clock text-4xl mb-4"></i>
+                        <h4>As Soon as Possible</h4>
+                        <p>Within the next few days</p>
+                    </button>
+                    <button class="option-card" data-value="planned">
+                        <i class="fas fa-calendar text-4xl mb-4"></i>
+                        <h4>Planned Project</h4>
+                        <p>In the coming weeks or months</p>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Heat Pump Type Step -->
+            <div id="step-heatpump-type" class="finder-step hidden">
+                <h3 class="text-2xl font-bold mb-6 text-center">What type of heat pump service do you need?</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <button class="option-card" data-value="new-install">
+                        <i class="fas fa-plus-circle text-4xl mb-4"></i>
+                        <h4>New Installation</h4>
+                        <p>Install a new heat pump system</p>
+                    </button>
+                    <button class="option-card" data-value="replacement">
+                        <i class="fas fa-sync text-4xl mb-4"></i>
+                        <h4>Replacement</h4>
+                        <p>Replace an existing heat pump</p>
+                    </button>
+                    <button class="option-card" data-value="service">
+                        <i class="fas fa-tools text-4xl mb-4"></i>
+                        <h4>Service & Maintenance</h4>
+                        <p>Maintain or repair existing system</p>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Results Step -->
+            <div id="step-result" class="finder-step hidden">
+                <!-- Result boxes will be dynamically shown based on selections -->
+            </div>
+
+            <div class="finder-nav flex justify-between mt-8">
+                <button id="prevStep" class="btn btn-outline" disabled>
+                    <i class="fas fa-arrow-left"></i> Previous
+                </button>
+                <button id="nextStep" class="btn btn-primary" disabled>
+                    Next <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</section> 

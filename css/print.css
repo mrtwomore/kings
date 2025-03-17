@@ -1,0 +1,176 @@
+/**
+ * Kings Electrical - Print Styles
+ * Optimizes the website for printing from any device
+ */
+
+@media print {
+    /* Reset all backgrounds and colors */
+    * {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    
+    /* Hide unnecessary elements */
+    .site-header,
+    .mobile-menu-toggle,
+    .main-nav,
+    .site-footer,
+    .cta-section,
+    .sticky-cta,
+    .filter-btn,
+    .review-filter,
+    button:not([type="submit"]),
+    .social-links,
+    .hero-section::before,
+    .hero-section::after,
+    video,
+    iframe,
+    .gallery-item {
+        display: none !important;
+    }
+    
+    /* Basic layout */
+    body {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        font-size: 12pt !important;
+        line-height: 1.4 !important;
+    }
+    
+    .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    /* Typography */
+    h1 {
+        font-size: 24pt !important;
+        margin-bottom: 20pt !important;
+    }
+    
+    h2 {
+        font-size: 18pt !important;
+        margin-bottom: 15pt !important;
+    }
+    
+    h3 {
+        font-size: 14pt !important;
+        margin-bottom: 10pt !important;
+    }
+    
+    p, li {
+        font-size: 12pt !important;
+        margin-bottom: 10pt !important;
+    }
+    
+    /* Links */
+    a {
+        text-decoration: underline !important;
+    }
+    
+    a[href]:after {
+        content: " (" attr(href) ")" !important;
+        font-size: 10pt !important;
+        font-style: italic !important;
+    }
+    
+    /* Don't show link text for internal links or javascript */
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "" !important;
+    }
+    
+    /* Images */
+    img {
+        max-width: 100% !important;
+        page-break-inside: avoid !important;
+    }
+    
+    /* Page breaks */
+    h1, h2, h3, h4, h5, h6 {
+        page-break-after: avoid !important;
+        page-break-inside: avoid !important;
+    }
+    
+    img, table, figure {
+        page-break-inside: avoid !important;
+    }
+    
+    ul, ol, dl {
+        page-break-before: avoid !important;
+    }
+    
+    /* Tables */
+    table {
+        border-collapse: collapse !important;
+        width: 100% !important;
+    }
+    
+    table, th, td {
+        border: 1px solid #000 !important;
+    }
+    
+    th, td {
+        padding: 8pt !important;
+        text-align: left !important;
+    }
+    
+    /* Cards and grids */
+    .services-grid,
+    .projects-grid,
+    .testimonials-grid,
+    .careers-grid,
+    .benefits-grid {
+        display: block !important;
+    }
+    
+    .service-card,
+    .project-card,
+    .testimonial-card,
+    .career-card,
+    .benefit-card {
+        margin-bottom: 20pt !important;
+        page-break-inside: avoid !important;
+        border: 1px solid #ddd !important;
+        padding: 15pt !important;
+    }
+    
+    /* Forms */
+    input, textarea, select {
+        border: 1px solid #000 !important;
+    }
+    
+    /* Add a print header with logo and contact info */
+    body::before {
+        content: "Kings Electrical | 0800 KINGS | info@kings.co.nz" !important;
+        display: block !important;
+        text-align: center !important;
+        font-size: 14pt !important;
+        font-weight: bold !important;
+        margin-bottom: 20pt !important;
+        padding-bottom: 10pt !important;
+        border-bottom: 1pt solid #000 !important;
+    }
+    
+    /* Add a print footer with page numbers */
+    @page {
+        margin: 2cm !important;
+    }
+    
+    @page :first {
+        margin-top: 3cm !important;
+    }
+    
+    @page :left {
+        margin-right: 3cm !important;
+    }
+    
+    @page :right {
+        margin-left: 3cm !important;
+    }
+} 

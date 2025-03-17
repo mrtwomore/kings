@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expert Electrical & Heat Pump Services | Kings Electrical Christchurch</title>
+    <meta name="description" content="Premium electrical services and heat pump solutions in Christchurch. Certified technicians, rapid response times, and guaranteed workmanship. Get a free quote today!">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Enhanced styling for Services Overview page */
+        .services-overview {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #FF6B35 0%, #FF9E70 100%);
+            color: #fff;
+            position: relative;
+        }
+        
+        .services-overview::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, #FF6B35, #FF9E70);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: stretch;
+        }
+        
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .service-card {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            transform: translateY(0);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            position: relative;
+            border-bottom: 4px solid #FF6B35;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .service-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .service-card:hover img {
+            transform: scale(1.05);
+        }
+        
+        .service-card-content {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .service-card-content h2 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #333;
+            font-size: 1.8rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .service-card-content h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: #FF6B35;
+            border-radius: 2px;
+        }
+        
+        .service-card-content p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            color: #555;
+        }
+        
+        .service-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 25px;
+        }
+        
+        .service-features li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 12px;
+            font-size: 1rem;
+            color: #444;
+            transition: transform 0.3s ease;
+        }
+        
+        .service-features li:hover {
+            transform: translateX(5px);
+        }
+        
+        .service-features li:before {
+            content: '\f00c';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            color: #FF6B35;
+            margin-right: 10px;
+        }
+        
+        .btn-primary {
+            background-color: #FF6B35;
+            color: #fff;
+            border: none;
+            padding: 14px 28px;
+            font-size: 1.05rem;
+            border-radius: 8px;
+            display: inline-block;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 15px rgba(255, 107, 53, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.7s ease;
+            z-index: -1;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            background: linear-gradient(135deg, #FF6B35 0%, #FF9E70 100%);
+            box-shadow: 0 12px 20px rgba(255, 107, 53, 0.4);
+        }
+        
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+        
+        .btn-primary span {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-section {
+            padding: 80px 0;
+            background: rgba(255, 107, 53, 0.05);
+            text-align: center;
+            position: relative;
+            border-top: 5px solid #FF6B35;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.4rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #555;
+        }
+        
+        .cta-section .btn-primary {
+            font-size: 1.2rem;
+            padding: 16px 38px;
+        }
+
+        /* New styles for enhanced services page */
+        .page-header .header-content {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, #FF6B35 0%, #FF9E70 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+        }
+
+        .page-header p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .benefits-section {
+            padding: 80px 0;
+            background: #f8f8f8;
+        }
+
+        .benefits-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .benefits-title h2 {
+            font-size: 2.4rem;
+            color: #333;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .benefits-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #FF6B35;
+        }
+
+        .benefits-title p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        @media (max-width: 992px) {
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .benefit-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            border-top: 4px solid #FF6B35;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .benefit-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(255, 158, 112, 0.1) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .benefit-icon i {
+            font-size: 30px;
+            color: #FF6B35;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .benefit-card p {
+            color: #555;
+            font-size: 1rem;
+        }
+
+        .testimonials-section {
+            padding: 80px 0;
+            background: #fff;
+        }
+
+        .testimonials-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .testimonials-title h2 {
+            font-size: 2.4rem;
+            color: #333;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .testimonials-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #FF6B35;
+        }
+
+        .testimonials-title p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        @media (max-width: 992px) {
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .testimonial-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            border-bottom: 4px solid #FF6B35;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .testimonial-text {
+            position: relative;
+            padding-top: 25px;
+            margin-bottom: 20px;
+            font-style: italic;
+            color: #444;
+        }
+
+        .testimonial-text:before {
+            content: '\f10d';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            color: rgba(255, 107, 53, 0.2);
+            font-size: 24px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+
+        .testimonial-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .testimonial-info h4 {
+            margin: 0;
+            font-size: 1.1rem;
+            color: #333;
+        }
+
+        .testimonial-info p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .rating {
+            color: #FF6B35;
+            margin-top: 5px;
+        }
+
+        .faq-section {
+            padding: 80px 0;
+            background: #f8f8f8;
+        }
+
+        .faq-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .faq-title h2 {
+            font-size: 2.4rem;
+            color: #333;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .faq-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #FF6B35;
+        }
+
+        .faq-title p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: #fff;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-left: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-left: 3px solid #FF6B35;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .faq-question i {
+            color: #FF6B35;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            font-size: 1.05rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 20px 20px;
+            max-height: 1000px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu Overlay -->
+    <div class="menu-overlay"></div>
+    
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" class="logo">
+                    <img src="images/Capture-One-Catalog0815.jpg" alt="Kings Electrical Logo">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="has-dropdown">
+                        <a href="services.html" class="active">Services</a>
+                        <ul class="dropdown">
+                            <li><a href="services/heat-pump-solutions.html">Heat Pump Solutions</a></li>
+                            <li><a href="services/electrical-services.html">Electrical Services</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-contact">
+                <a href="tel:+6433771546" class="phone-number"><i class="fas fa-phone"></i> 03 377 1546</a>
+                <a href="contact.html" class="btn btn-primary"><span>Contact Us</span></a>
+                <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="header-content">
+                <h1>Transform Your Space with Expert Solutions</h1>
+                <p>Experience superior electrical and heat pump services from Christchurch's most trusted team. Our certified technicians deliver exceptional results with transparent pricing and guaranteed workmanship.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="services-overview">
+        <div class="container">
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="images/Capture-One-Catalog0490-e1722552518279.jpg" alt="Heat Pump Solutions">
+                    <div class="service-card-content">
+                        <h2>Heat Pump Solutions</h2>
+                        <p>Create the perfect indoor climate year-round with our comprehensive heat pump services. We partner with industry-leading brands to deliver superior comfort and energy efficiency.</p>
+                        <ul class="service-features">
+                            <li>Expert installation with 5-year workmanship guarantee</li>
+                            <li>Comprehensive service & maintenance plans</li>
+                            <li>Energy-efficient system recommendations</li>
+                            <li>Fast repairs by certified technicians</li>
+                            <li>Free in-home consultations & quotes</li>
+                            <li>Finance options available for new systems</li>
+                        </ul>
+                        <a href="services/heat-pump-solutions.html" class="btn btn-primary"><span>Explore Heat Pump Services</span></a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <img src="images/Capture-One-Catalog0317.jpg" alt="Electrical Services">
+                    <div class="service-card-content">
+                        <h2>Electrical Services</h2>
+                        <p>From essential electrical maintenance to complete system installations, our licensed electricians deliver safe, reliable solutions for both residential and commercial properties.</p>
+                        <ul class="service-features">
+                            <li>Complete electrical system installation & upgrades</li>
+                            <li>24/7 emergency electrical repairs</li>
+                            <li>Safety inspections & compliance testing</li>
+                            <li>Energy-efficient lighting solutions</li>
+                            <li>Switchboard upgrades & power point installation</li>
+                            <li>Commercial & residential expertise</li>
+                        </ul>
+                        <a href="services/electrical-services.html" class="btn btn-primary"><span>Discover Electrical Services</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="benefits-title">
+                <h2>Why Choose Kings Electrical</h2>
+                <p>Experience the difference of working with Christchurch's premier electrical and heat pump specialists</p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Certified Expertise</h3>
+                    <p>All our technicians are fully licensed, insured, and undergo continuous training to stay current with industry innovations.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Rapid Response</h3>
+                    <p>With our 24/7 emergency service, we're always available when you need us most, with average arrival times of under 60 minutes.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Guaranteed Workmanship</h3>
+                    <p>We stand behind our work with comprehensive warranties and a satisfaction guarantee on all services performed.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3>Transparent Pricing</h3>
+                    <p>No hidden fees or surprises. We provide detailed quotes upfront and stick to them, with no overtime charges.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Energy Efficiency Focus</h3>
+                    <p>We recommend solutions that not only solve immediate needs but help reduce your energy consumption and costs long-term.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Latest Technology</h3>
+                    <p>We invest in advanced diagnostic tools and stay current with emerging technologies to provide superior service.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="testimonials-title">
+                <h2>What Our Clients Say</h2>
+                <p>Read about real experiences from local Christchurch homeowners and businesses</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>"Kings Electrical installed our heat pump system and we couldn't be happier with the results. The team was professional, clean, and finished ahead of schedule. Our home is now comfortable year-round and our power bills have decreased significantly."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <img src="images/Capture-One-Catalog0317.jpg" alt="Sarah Johnson">
+                        </div>
+                        <div class="testimonial-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>Merivale, Christchurch</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>"We had an urgent electrical issue at our restaurant on a Saturday night. Kings Electrical arrived within 30 minutes of our call and solved the problem quickly, preventing us from having to close early. Their emergency service is truly reliable."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <img src="images/Capture-One-Catalog0477.jpg" alt="Michael Williams">
+                        </div>
+                        <div class="testimonial-info">
+                            <h4>Michael Williams</h4>
+                            <p>Restaurant Owner, CBD</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>"We've used Kings for all our office electrical maintenance for years. Their team is always punctual, professional, and thorough. The preventative maintenance program they recommended has saved us from costly downtime multiple times."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <img src="images/Capture-One-Catalog0508-1.jpg" alt="Lisa Thompson">
+                        </div>
+                        <div class="testimonial-info">
+                            <h4>Lisa Thompson</h4>
+                            <p>Office Manager, Riccarton</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="faq-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Get answers to common questions about our services</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How quickly can you respond to service requests?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>For standard service requests, we typically schedule appointments within 24-48 hours. For emergency electrical issues, we offer 24/7 service with an average response time of under 60 minutes in the Christchurch area. Our team prioritizes urgent situations to ensure your safety and minimize disruption.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What brands of heat pumps do you install?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We are authorized dealers for several premium heat pump brands including Mitsubishi Electric, Daikin, Fujitsu, and Panasonic. We select from these trusted manufacturers because of their reliability, energy efficiency, and excellent warranty support. During your consultation, we'll recommend the best system for your specific needs and space.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you offer warranties on your work?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely. All our electrical work comes with a comprehensive 12-month workmanship warranty. For heat pump installations, we provide an extended 5-year workmanship guarantee. Additionally, all products and systems we install carry their respective manufacturer warranties, which we help you register. We're committed to your long-term satisfaction.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What areas of Christchurch do you service?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We provide service throughout greater Christchurch and surrounding areas including Riccarton, Merivale, Fendalton, Cashmere, Addington, Papanui, Hornby, Sydenham, Ilam, Avonhead, and the Christchurch CBD. For locations further out, please contact us to discuss availability and scheduling options.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you offer financing options for larger projects?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we understand that larger electrical upgrades and heat pump systems represent a significant investment. That's why we've partnered with trusted financing providers to offer flexible payment options with competitive rates. During your consultation, we can discuss the available financing plans to find one that fits your budget and needs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Experience Premium Service?</h2>
+            <p>Book your free consultation today and discover why we're Christchurch's most trusted electrical and heat pump specialists.</p>
+            <a href="contact.html" class="btn btn-primary"><span>Get Your Free Quote</span></a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="about.html#team">Our Team</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="services/commercial-electrical.html">Commercial Electrical</a></li>
+                        <li><a href="services/residential-electrical.html">Residential Electrical</a></li>
+                        <li><a href="services/heat-pump-solutions.html">Heat Pump Solutions</a></li>
+                        <li><a href="services/emergency-services.html">Emergency Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul class="contact-details">
+                        <li><i class="fas fa-phone"></i> <a href="tel:+6433771546">03 377 1546</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@kingselectrical.co.nz">info@kingselectrical.co.nz</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Main Street, Christchurch</li>
+                    </ul>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Kings Electrical. All rights reserved.</p>
+                <ul class="footer-links">
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms-of-service.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', function() {
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+    });
+    </script>
+</body>
+</html> 

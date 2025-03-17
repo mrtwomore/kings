@@ -1,0 +1,640 @@
+/* 
+* Kings Electrical Service Page Styles
+* Additional styles specific to service pages
+*/
+
+/* ===== SERVICE HERO SECTION ===== */
+.service-hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/Capture-One-Catalog0529.jpg');
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    padding: 6rem 0;
+    text-align: center;
+}
+
+.emergency-hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/Capture-One-Catalog0660_2.jpg');
+}
+
+.service-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.service-hero h1 {
+    color: var(--white);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.service-hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.service-hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* ===== SERVICE OVERVIEW SECTION ===== */
+.service-overview {
+    padding: var(--section-spacing) 0;
+}
+
+.service-overview-grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.service-overview-content h2 {
+    text-align: left;
+}
+
+.service-overview-content h2:after {
+    margin-left: 0;
+}
+
+.service-overview-image img {
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+/* ===== SERVICE BENEFITS SECTION ===== */
+.service-benefits {
+    padding: var(--section-spacing) 0;
+    background-color: var(--lighter-gray);
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.benefit-card {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+}
+
+.benefit-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.benefit-card h3 {
+    margin-bottom: 1rem;
+}
+
+.benefit-card p {
+    color: var(--gray-color);
+}
+
+/* ===== PROCESS SECTION ===== */
+.process-section {
+    padding: var(--section-spacing) 0;
+}
+
+.process-steps {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.process-step-numbers {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--light-gray);
+    color: var(--gray-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.25rem;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.step-number.active {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.step-connector {
+    flex-grow: 1;
+    height: 4px;
+    background-color: var(--light-gray);
+    position: relative;
+    z-index: 1;
+}
+
+.process-details {
+    position: relative;
+}
+
+.process-step {
+    display: none;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.process-step.active {
+    display: block;
+}
+
+.process-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.process-step h3 {
+    margin-bottom: 1rem;
+}
+
+/* ===== CERTIFICATIONS SECTION ===== */
+.certifications-section {
+    padding: var(--section-spacing) 0;
+    background-color: var(--lighter-gray);
+    text-align: center;
+}
+
+.certification-intro {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    font-size: 1.1rem;
+}
+
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.certification-item {
+    background-color: var(--white);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: all 0.3s ease;
+}
+
+.certification-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+}
+
+.certification-item img {
+    height: 80px;
+    margin: 0 auto 1rem;
+}
+
+.certification-note {
+    max-width: 800px;
+    margin: 0 auto;
+    font-style: italic;
+    color: var(--text-light);
+}
+
+/* ===== PRICING SECTION ===== */
+.pricing-section {
+    padding: var(--section-spacing) 0;
+}
+
+.pricing-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.pricing-factors {
+    margin: 1.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.pricing-factors li {
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.pricing-factors li:before {
+    content: '✓';
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.pricing-highlight {
+    background-color: var(--lighter-gray);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.pricing-highlight h3 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.price {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--dark-color);
+    margin-bottom: 1.5rem;
+}
+
+.price span {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--gray-color);
+    margin-left: 0.25rem;
+}
+
+.pricing-highlight ul {
+    text-align: left;
+    margin: 1.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.pricing-highlight li {
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.pricing-highlight li:before {
+    content: '✓';
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.pricing-note {
+    font-style: italic;
+    color: var(--gray-color);
+    margin-bottom: 2rem;
+}
+
+/* ===== RELATED PROJECTS SECTION ===== */
+.related-projects {
+    padding: var(--section-spacing) 0;
+    background-color: var(--light-color);
+}
+
+/* ===== FAQ SECTION ===== */
+.faq-section {
+    padding: var(--section-spacing) 0;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+}
+
+.faq-item {
+    margin-bottom: 1rem;
+    border: 1px solid var(--light-gray);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.faq-question {
+    padding: 1.5rem;
+    background-color: var(--white);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-question h3 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.faq-toggle {
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.faq-item.active .faq-toggle {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    padding: 0 1.5rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background-color: var(--white);
+}
+
+.faq-item.active .faq-answer {
+    padding: 0 1.5rem 1.5rem;
+    max-height: 500px;
+}
+
+/* ===== RELATED SERVICES SECTION ===== */
+.related-services {
+    padding: var(--section-spacing) 0;
+    background-color: var(--light-color);
+}
+
+/* ===== CTA SECTION ===== */
+.cta-section {
+    padding: 4rem 0;
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+}
+
+.cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta-section h2 {
+    color: var(--white);
+}
+
+.cta-section h2:after {
+    background-color: var(--white);
+}
+
+.cta-section p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.cta-section .btn-primary {
+    background-color: var(--white);
+    color: var(--primary-color);
+}
+
+.cta-section .btn-primary:hover {
+    background-color: var(--light-gray);
+}
+
+.cta-section .btn-secondary {
+    background-color: transparent;
+    border: 2px solid var(--white);
+}
+
+.cta-section .btn-secondary:hover {
+    background-color: var(--white);
+    color: var(--primary-color);
+}
+
+/* ===== ENHANCED SERVICE CARDS ===== */
+.service-card {
+    position: relative;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    padding: 2rem;
+    background: var(--white);
+    border-top: 4px solid var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.service-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+    color: var(--white);
+    font-size: 2rem;
+    box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+    transition: all 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(255, 107, 53, 0.4);
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--dark-color);
+    position: relative;
+    padding-bottom: 0.75rem;
+}
+
+.service-card h3:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+.service-card p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.service-card-expanded {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    margin-top: 1rem;
+    opacity: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    padding-top: 0;
+}
+
+.service-card.expanded .service-card-expanded {
+    max-height: 500px;
+    opacity: 1;
+    margin-bottom: 1rem;
+    padding-top: 1.5rem;
+}
+
+.service-card-expanded p {
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+}
+
+.service-card-expanded ul {
+    list-style: none;
+    padding-left: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.service-card-expanded li {
+    margin-bottom: 0.75rem;
+    color: var(--text-secondary);
+    position: relative;
+    padding-left: 1.75rem;
+}
+
+.service-card-expanded li:before {
+    content: '\f00c';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}
+
+.expand-btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0.5rem 0;
+    font-family: var(--body-font);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.expand-btn:hover {
+    color: var(--primary-dark);
+}
+
+.expand-btn i {
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.service-card.expanded .expand-btn i {
+    transform: rotate(180deg);
+}
+
+.service-card.expanded {
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== RESPONSIVE STYLES ===== */
+@media (max-width: 992px) {
+    .service-overview-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .service-overview-image {
+        order: -1;
+        margin-bottom: 2rem;
+    }
+    
+    .process-step-numbers {
+        overflow-x: auto;
+        padding-bottom: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .service-hero {
+        padding: 4rem 0;
+    }
+    
+    .service-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .service-hero-buttons {
+        flex-direction: column;
+    }
+    
+    .service-hero-buttons .btn {
+        margin-bottom: 1rem;
+    }
+    
+    .benefit-card {
+        padding: 1.5rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+    }
+    
+    .cta-buttons .btn {
+        margin-bottom: 1rem;
+    }
+    
+    .service-card {
+        padding: 1.5rem;
+    }
+    
+    .service-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 1.75rem;
+        margin-bottom: 1.25rem;
+    }
+    
+    .service-card-expanded {
+        padding: 0 0.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .service-hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .certifications-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .pricing-highlight {
+        padding: 1.5rem;
+    }
+    
+    .price {
+        font-size: 2.5rem;
+    }
+} 

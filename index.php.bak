@@ -1,0 +1,217 @@
+<?php
+require_once 'config.php';
+
+// Page-specific data
+$page_data = [
+    'title' => 'Home',
+    'description' => 'Kings Electrical - Your trusted electrical and heat pump specialists in Christchurch. Quality solutions for residential and commercial clients.',
+    'hero' => [
+        'title' => 'Expert Electrical & Heat Pump Solutions',
+        'description' => 'Professional electrical services and heat pump solutions for homes and businesses in Christchurch.',
+        'bg_image' => '/images/hero-bg.jpg',
+        'buttons' => '
+            <a href="/service-finder" class="btn btn-primary">
+                <span>Find Your Solution</span>
+            </a>
+            <a href="/contact" class="btn btn-outline">
+                <span>Contact Us</span>
+            </a>
+        '
+    ],
+    'services' => [
+        'title' => 'Our Services',
+        'cards' => [
+            [
+                'title' => 'Heat Pump Solutions',
+                'description' => 'Expert installation and servicing of heat pumps for optimal comfort and efficiency.',
+                'image' => '/images/heat-pump-services.jpg',
+                'link' => '/services/heat-pump-solutions'
+            ],
+            [
+                'title' => 'Commercial Electrical',
+                'description' => 'Comprehensive electrical solutions for businesses and commercial properties.',
+                'image' => '/images/commercial-electrical.jpg',
+                'link' => '/services/commercial-electrical'
+            ],
+            [
+                'title' => 'Residential Electrical',
+                'description' => 'Professional electrical services for homes and residential properties.',
+                'image' => '/images/residential-electrical.jpg',
+                'link' => '/services/residential-electrical'
+            ],
+            [
+                'title' => 'Emergency Services',
+                'description' => '24/7 emergency electrical services when you need them most.',
+                'image' => '/images/emergency-services.jpg',
+                'link' => '/services/emergency-services'
+            ]
+        ]
+    ],
+    'features' => [
+        'title' => 'Why Choose Kings Electrical',
+        'items' => [
+            [
+                'icon' => 'fas fa-certificate',
+                'title' => 'Licensed & Certified',
+                'description' => 'Our team consists of fully licensed and certified electricians with years of experience.'
+            ],
+            [
+                'icon' => 'fas fa-clock',
+                'title' => 'Prompt Service',
+                'description' => 'We value your time and always arrive on schedule for appointments and emergency calls.'
+            ],
+            [
+                'icon' => 'fas fa-tools',
+                'title' => 'Quality Workmanship',
+                'description' => 'We take pride in our work and ensure every job is completed to the highest standards.'
+            ],
+            [
+                'icon' => 'fas fa-dollar-sign',
+                'title' => 'Competitive Pricing',
+                'description' => 'We offer fair, transparent pricing with no hidden fees or unexpected charges.'
+            ]
+        ]
+    ],
+    'testimonials' => [
+        'title' => 'What Our Clients Say',
+        'items' => [
+            [
+                'index' => 0,
+                'text' => 'Kings Electrical installed our heat pump system and we couldn\'t be happier. Professional service from start to finish, and the system works perfectly.',
+                'author' => 'Sarah Johnson',
+                'role' => 'Homeowner in Christchurch'
+            ],
+            [
+                'index' => 1,
+                'text' => 'We had an electrical emergency at our office and Kings Electrical responded within the hour. Their team was professional, efficient, and solved the problem quickly.',
+                'author' => 'Michael Thompson',
+                'role' => 'Business Owner'
+            ],
+            [
+                'index' => 2,
+                'text' => 'The team at Kings Electrical helped us upgrade our home\'s electrical system. They were knowledgeable, tidy, and completed the work on time and within budget.',
+                'author' => 'Emma Wilson',
+                'role' => 'Residential Client'
+            ]
+        ]
+    ],
+    'cta' => [
+        'title' => 'Need Emergency Electrical Service?',
+        'description' => 'Our team is available 24/7 for urgent electrical issues. Don\'t wait - contact us now for immediate assistance.',
+        'buttons' => '
+            <a href="tel:+6408008084448" class="btn btn-emergency">
+                <i class="fas fa-phone"></i> Call 0800 808 448
+            </a>
+            <a href="/contact" class="btn btn-white">
+                <span>Contact Us</span>
+            </a>
+        '
+    ],
+    'service_areas' => [
+        'title' => 'Areas We Serve',
+        'map_image' => '/images/christchurch-map.jpg',
+        'locations_description' => 'We provide electrical and heat pump services throughout Christchurch and surrounding areas:',
+        'locations_list' => '
+            <li>Christchurch Central</li>
+            <li>Riccarton</li>
+            <li>Merivale</li>
+            <li>Fendalton</li>
+            <li>Papanui</li>
+            <li>Cashmere</li>
+            <li>Sumner</li>
+            <li>New Brighton</li>
+            <li>Hornby</li>
+            <li>Halswell</li>
+            <li>Rolleston</li>
+            <li>Lincoln</li>
+        '
+    ]
+];
+
+// Start output buffering
+ob_start();
+
+// Include base template
+$content = file_get_contents(COMPONENTS_PATH . '/layout/base.html');
+
+// Replace placeholders
+$content = str_replace('<!-- PAGE_TITLE -->', $page_data['title'], $content);
+$content = str_replace('<!-- META_DESCRIPTION -->', $page_data['description'], $content);
+$content = str_replace('<!-- INCLUDE_HEADER -->', file_get_contents(COMPONENTS_PATH . '/layout/header.html'), $content);
+$content = str_replace('<!-- INCLUDE_FOOTER -->', file_get_contents(COMPONENTS_PATH . '/layout/footer.html'), $content);
+
+// Generate main content
+ob_start();
+
+// Include Hero Section
+include_component('sections/hero', $page_data['hero']);
+
+// Include Service Finder Section
+include_component('sections/service-finder', []);
+
+// Generate Services Cards HTML
+$services_cards = '';
+foreach ($page_data['services']['cards'] as $card) {
+    $card_content = file_get_contents(COMPONENTS_PATH . '/shared/service-card.html');
+    foreach ($card as $key => $value) {
+        $card_content = str_replace('<!-- CARD_' . strtoupper($key) . ' -->', $value, $card_content);
+    }
+    $services_cards .= $card_content;
+}
+
+// Include Services Grid Section
+include_component('sections/services-grid', [
+    'section_title' => $page_data['services']['title'],
+    'services_cards' => $services_cards
+]);
+
+// Generate Features HTML
+$feature_items = '';
+foreach ($page_data['features']['items'] as $feature) {
+    $feature_content = file_get_contents(COMPONENTS_PATH . '/shared/feature-item.html');
+    foreach ($feature as $key => $value) {
+        $feature_content = str_replace('<!-- FEATURE_' . strtoupper($key) . ' -->', $value, $feature_content);
+    }
+    $feature_items .= $feature_content;
+}
+
+// Include Features Section
+include_component('sections/features', [
+    'section_title' => $page_data['features']['title'],
+    'feature_items' => $feature_items
+]);
+
+// Generate Testimonials HTML
+$testimonial_items = '';
+$testimonial_dots = '';
+foreach ($page_data['testimonials']['items'] as $index => $testimonial) {
+    $testimonial_content = file_get_contents(COMPONENTS_PATH . '/shared/testimonial-item.html');
+    foreach ($testimonial as $key => $value) {
+        $testimonial_content = str_replace('<!-- TESTIMONIAL_' . strtoupper($key) . ' -->', $value, $testimonial_content);
+    }
+    $testimonial_items .= $testimonial_content;
+    
+    // Add dot for each testimonial
+    $active_class = ($index === 0) ? ' active' : '';
+    $testimonial_dots .= '<button class="dot' . $active_class . '" data-index="' . $index . '"></button>';
+}
+
+// Include Testimonials Section
+include_component('sections/testimonials', [
+    'section_title' => $page_data['testimonials']['title'],
+    'testimonial_items' => $testimonial_items,
+    'testimonial_dots' => $testimonial_dots
+]);
+
+// Include CTA Section
+include_component('sections/cta', $page_data['cta']);
+
+// Include Service Areas Section
+include_component('sections/service-areas', $page_data['service_areas']);
+
+$page_content = ob_get_clean();
+$content = str_replace('<!-- PAGE_CONTENT -->', $page_content, $content);
+
+// Output the complete page
+echo $content;
+?> 

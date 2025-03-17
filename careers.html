@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers at Kings Electrical | Join Our Team</title>
+    <meta name="description" content="Join Kings Electrical's team of skilled professionals. View current job openings and career opportunities in Christchurch.">
+    
+    <!-- Favicon and Touch Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/public/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/public/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/public/icons/favicon-16x16.png">
+    <link rel="manifest" href="/public/icons/site.webmanifest">
+    <link rel="shortcut icon" href="/favicon.ico">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'" crossorigin>
+
+    <style>
+        /* Additional styles for careers page */
+        .careers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 40px 0;
+        }
+
+        .career-card {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .career-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .career-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .career-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .career-card:hover .career-image img {
+            transform: scale(1.1);
+        }
+
+        .career-content {
+            padding: 25px;
+        }
+
+        .career-type {
+            display: inline-block;
+            padding: 5px 12px;
+            background: rgba(255, 107, 53, 0.1);
+            color: #FF6B35;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .career-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .career-content p {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .career-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        .career-meta span {
+            display: flex;
+            align-items: center;
+        }
+
+        .career-meta i {
+            margin-right: 5px;
+            color: #FF6B35;
+        }
+
+        .benefits-section {
+            background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
+            padding: 60px 0;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .benefit-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .benefit-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 107, 53, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .benefit-icon i {
+            font-size: 1.5rem;
+            color: #FF6B35;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .benefit-card p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .application-form {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 30px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .file-upload {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .file-upload-label {
+            display: block;
+            padding: 12px;
+            background: #f8f8f8;
+            border: 2px dashed #ddd;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .file-upload-label:hover {
+            border-color: #FF6B35;
+            background: rgba(255, 107, 53, 0.05);
+        }
+
+        .file-upload input[type="file"] {
+            position: absolute;
+            width: 0;
+            height: 0;
+            opacity: 0;
+        }
+
+        @media (max-width: 768px) {
+            .careers-grid {
+                grid-template-columns: 1fr;
+                padding: 20px 0;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .application-form {
+                padding: 20px;
+                margin: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" class="logo">
+                    <img src="images/Capture-One-Catalog0815.jpg" alt="Kings Electrical Logo">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="has-dropdown">
+                        <a href="services.html">Services</a>
+                        <ul class="dropdown">
+                            <li><a href="services/heat-pump-solutions.html">Heat Pump Solutions</a></li>
+                            <li><a href="services/electrical-services.html">Electrical Services</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="contact.html" class="btn btn-primary"><span>Contact Us</span></a>
+            <button class="mobile-menu-toggle">
+                <span class="sr-only">Menu</span>
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="hero-section" style="padding: 80px 0;">
+            <div class="container">
+                <h1>Join Our Team</h1>
+                <p>Build your career with Christchurch's leading electrical and heat pump specialists</p>
+            </div>
+        </section>
+
+        <!-- Current Openings -->
+        <section class="container">
+            <h2 class="text-center">Current Opportunities</h2>
+            <div class="careers-grid">
+                <!-- Job 1 -->
+                <div class="career-card">
+                    <div class="career-image">
+                        <img src="images/Capture-One-Catalog0529.jpg" alt="Commercial Electrician">
+                    </div>
+                    <div class="career-content">
+                        <span class="career-type">Full Time</span>
+                        <h3>Senior Commercial Electrician</h3>
+                        <p>Join our commercial team and work on exciting projects across Christchurch. Experience with commercial installations required.</p>
+                        <div class="career-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Christchurch</span>
+                            <span><i class="fas fa-clock"></i> Immediate Start</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job 2 -->
+                <div class="career-card">
+                    <div class="career-image">
+                        <img src="images/Capture-One-Catalog0477.jpg" alt="Heat Pump Technician">
+                    </div>
+                    <div class="career-content">
+                        <span class="career-type">Full Time</span>
+                        <h3>Heat Pump Technician</h3>
+                        <p>Looking for experienced heat pump installers to join our growing team. Must have relevant qualifications and experience.</p>
+                        <div class="career-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Christchurch</span>
+                            <span><i class="fas fa-clock"></i> Immediate Start</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job 3 -->
+                <div class="career-card">
+                    <div class="career-image">
+                        <img src="images/Capture-One-Catalog0317.jpg" alt="Apprentice Electrician">
+                    </div>
+                    <div class="career-content">
+                        <span class="career-type">Apprenticeship</span>
+                        <h3>Apprentice Electrician</h3>
+                        <p>Start your electrical career with us. Great opportunity for motivated individuals looking to learn from experienced professionals.</p>
+                        <div class="career-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Christchurch</span>
+                            <span><i class="fas fa-clock"></i> Starting 2024</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="benefits-section">
+            <div class="container">
+                <h2 class="text-center">Why Work With Us?</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Career Growth</h3>
+                        <p>Opportunities for advancement and professional development through training and certifications.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-hand-holding-heart"></i>
+                        </div>
+                        <h3>Great Benefits</h3>
+                        <p>Competitive salary, health insurance, and vehicle allowance for qualified positions.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Team Culture</h3>
+                        <p>Join a supportive team environment with regular social events and team building activities.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Latest Equipment</h3>
+                        <p>Work with modern tools and equipment to deliver the best service to our clients.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Application Form -->
+        <section class="container">
+            <h2 class="text-center">Apply Now</h2>
+            <form class="application-form">
+                <div class="form-group">
+                    <label for="position">Position Applied For*</label>
+                    <select id="position" required>
+                        <option value="">Select a position</option>
+                        <option value="commercial">Senior Commercial Electrician</option>
+                        <option value="heatpump">Heat Pump Technician</option>
+                        <option value="apprentice">Apprentice Electrician</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="name">Full Name*</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address*</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number*</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="experience">Years of Experience</label>
+                    <input type="number" id="experience" min="0">
+                </div>
+                <div class="form-group">
+                    <label for="message">Cover Letter</label>
+                    <textarea id="message" placeholder="Tell us why you'd be a great fit for this position"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Upload CV*</label>
+                    <div class="file-upload">
+                        <label class="file-upload-label">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <span>Choose file or drag and drop</span>
+                            <input type="file" accept=".pdf,.doc,.docx" required>
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;"><span>Submit Application</span></button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="services/commercial-electrical.html">Commercial Electrical</a></li>
+                        <li><a href="services/residential-electrical.html">Residential Electrical</a></li>
+                        <li><a href="services/heat-pump-solutions.html">Heat Pump Solutions</a></li>
+                        <li><a href="services/emergency-services.html">Emergency Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul class="contact-details">
+                        <li><i class="fas fa-phone"></i> <a href="tel:+6433771546">03 377 1546</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@kings.co.nz">info@kings.co.nz</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> Christchurch, NZ</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Kings Electrical. All rights reserved.</p>
+                <ul class="footer-links">
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms-of-service.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script>
+        // File upload handling
+        document.addEventListener('DOMContentLoaded', function() {
+            const fileInput = document.querySelector('input[type="file"]');
+            const fileLabel = document.querySelector('.file-upload-label span');
+
+            fileInput.addEventListener('change', function() {
+                if (this.files.length > 0) {
+                    fileLabel.textContent = this.files[0].name;
+                } else {
+                    fileLabel.textContent = 'Choose file or drag and drop';
+                }
+            });
+
+            // Form submission handling
+            const form = document.querySelector('.application-form');
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                // Add your form submission logic here
+                alert('Thank you for your application! We will be in touch soon.');
+                form.reset();
+                fileLabel.textContent = 'Choose file or drag and drop';
+            });
+        });
+    </script>
+</body>
+</html> 

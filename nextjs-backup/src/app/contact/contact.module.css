@@ -1,0 +1,369 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.header {
+  padding: 2rem 0;
+  text-align: center;
+  position: relative;
+}
+
+.backLink {
+  position: absolute;
+  left: 0;
+  top: 2rem;
+  display: inline-flex;
+  align-items: center;
+  color: #0070f3;
+  font-weight: 500;
+}
+
+.backLink:hover {
+  text-decoration: underline;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.subheading {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contactWrapper {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.formContainer {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+.formHeader {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.formHeader h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #0070f3;
+}
+
+.form {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup label {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+  padding: 0.9rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: #0070f3;
+  box-shadow: 0 0 0 3px rgba(0, 112, 243, 0.1);
+}
+
+.formGroup textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.errorInput {
+  border-color: #e53e3e !important;
+}
+
+.errorMessage {
+  color: #e53e3e;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.errorBanner {
+  background-color: #fed7d7;
+  color: #e53e3e;
+  padding: 1rem;
+  border-radius: 4px;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.submitButton {
+  background-color: #0070f3;
+  color: white;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.submitButton:hover:not(:disabled) {
+  background-color: #0051a2;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.submitButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.button {
+  background-color: #0070f3;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+}
+
+.button:hover:not(:disabled) {
+  background-color: #0051a2;
+}
+
+.guaranteeBox {
+  display: flex;
+  align-items: center;
+  background-color: #ebf8ff;
+  border: 1px solid #bee3f8;
+  border-radius: 5px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.guaranteeIcon {
+  font-size: 1.8rem;
+  margin-right: 1rem;
+}
+
+.guaranteeBox p {
+  margin: 0.25rem 0 0 0;
+  font-size: 0.9rem;
+  color: #2c5282;
+}
+
+.formDisclaimer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 1rem;
+}
+
+.successMessage {
+  text-align: center;
+  padding: 2rem;
+}
+
+.successIcon {
+  width: 60px;
+  height: 60px;
+  background-color: #38a169;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin: 0 auto 1.5rem;
+}
+
+.successMessage h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #38a169;
+}
+
+.successMessage p {
+  margin-bottom: 1rem;
+}
+
+.followUp {
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+
+.contactSidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.whyChooseUs, 
+.contactDirect, 
+.testimonialSidebar {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+}
+
+.whyChooseUs h3, 
+.contactDirect h3 {
+  margin-bottom: 1rem;
+  color: #0070f3;
+  font-size: 1.3rem;
+}
+
+.benefitsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.benefitsList li {
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.checkmark {
+  color: #38a169;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.phoneButton {
+  display: inline-block;
+  background-color: #0070f3;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  margin: 0.5rem 0 1rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.phoneButton:hover {
+  background-color: #0051a2;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: white;
+}
+
+.businessHours {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.emergencyNote {
+  display: block;
+  margin-top: 0.5rem;
+  color: #e53e3e;
+  font-weight: 600;
+}
+
+.testimonialSidebar {
+  background-color: #f8f9fa;
+  border-left: 4px solid #0070f3;
+}
+
+.testimonialSidebar .stars {
+  color: #ffc107;
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.testimonialSidebar blockquote {
+  font-style: italic;
+  margin: 0 0 1rem 0;
+  color: #555;
+  line-height: 1.6;
+}
+
+.testimonialSidebar cite {
+  font-style: normal;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.footer {
+  margin-top: auto;
+  padding: 2rem 0;
+  text-align: center;
+  border-top: 1px solid #eaeaea;
+}
+
+@media (max-width: 992px) {
+  .contactWrapper {
+    grid-template-columns: 1fr;
+  }
+  
+  .contactSidebar {
+    order: -1; /* Show the sidebar first on mobile */
+  }
+}
+
+@media (max-width: 768px) {
+  .backLink {
+    position: static;
+    margin-bottom: 1rem;
+    display: inline-block;
+  }
+  
+  .header {
+    padding-top: 1rem;
+  }
+  
+  .header h1 {
+    font-size: 2rem;
+  }
+  
+  .formRow {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+} 

@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Christchurch's Top-Rated Electrical Experts | Same-Day Service</title>
+    <meta name="description" content="Request a free consultation or emergency service from Kings Electrical. Fast response times, transparent quotes, and 24/7 emergency support throughout Christchurch.">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Additional styles for Contact page */
+        .contact-section {
+            padding: 80px 0;
+            background: linear-gradient(to bottom, #fff 0%, #f8f8f8 100%);
+            position: relative;
+        }
+        
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, #FF6B35, #FF9E70);
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .contact-form {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-top: 5px solid #FF6B35;
+        }
+        
+        .form-header {
+            margin-bottom: 35px;
+            text-align: center;
+        }
+        
+        .form-header h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            color: #333;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .form-header h2:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 4px;
+            background-color: #FF6B35;
+            border-radius: 2px;
+        }
+        
+        .form-header p {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #444;
+            font-size: 1.05rem;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background-color: #f9f9f9;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #FF6B35;
+            background-color: #fff;
+            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+            outline: none;
+        }
+        
+        .form-group textarea {
+            min-height: 180px;
+            resize: vertical;
+        }
+        
+        .form-note {
+            font-size: 0.9rem;
+            color: #777;
+            margin-top: 8px;
+            font-style: italic;
+        }
+        
+        .contact-info {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            padding: 40px;
+            transform: translateY(0);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 5px solid #FF6B35;
+        }
+        
+        .contact-info:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .contact-info h3 {
+            margin-top: 0;
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            color: #333;
+            position: relative;
+            padding-bottom: 15px;
+            text-align: center;
+        }
+        
+        .contact-info h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: #FF6B35;
+            border-radius: 2px;
+        }
+        
+        .contact-details {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 40px;
+        }
+        
+        .contact-details li {
+            margin-bottom: 25px;
+            display: flex;
+            align-items: flex-start;
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-details li:hover {
+            transform: translateX(5px);
+        }
+        
+        .contact-details i {
+            color: #fff;
+            margin-right: 15px;
+            margin-top: 4px;
+            width: 35px;
+            height: 35px;
+            background: linear-gradient(135deg, #FF6B35 0%, #FF9E70 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.2);
+        }
+        
+        .contact-details strong {
+            color: #444;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+        
+        .contact-details a {
+            color: #555;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-details a:hover {
+            color: #FF6B35;
+        }
+        
+        .contact-map {
+            border-radius: 12px;
+            overflow: hidden;
+            margin-top: 40px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transform: translateY(0);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .contact-map:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+        .contact-map iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+            display: block;
+        }
+        
+        .business-hours {
+            list-style: none;
+            padding: 20px;
+            margin: 0 0 40px;
+            background: rgba(255, 107, 53, 0.05);
+            border-radius: 10px;
+        }
+        
+        .business-hours li {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px dashed rgba(255, 107, 53, 0.2);
+            font-size: 1.05rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .business-hours li:hover {
+            transform: translateX(5px);
+        }
+        
+        .business-hours li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .business-hours li span:first-child {
+            font-weight: 600;
+            color: #444;
+        }
+        
+        .emergency-note {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.15) 0%, rgba(255, 158, 112, 0.15) 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid #FF6B35;
+        }
+        
+        .emergency-note:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .emergency-note i {
+            color: #FF6B35;
+            font-size: 2rem;
+            margin-right: 15px;
+        }
+        
+        .emergency-note strong {
+            display: block;
+            margin-bottom: 5px;
+            color: #444;
+            font-size: 1.1rem;
+        }
+        
+        .faq-section {
+            padding: 80px 0;
+            background: linear-gradient(to bottom, #f8f8f8 0%, #fff 100%);
+            position: relative;
+        }
+        
+        .faq-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, #FF6B35, #FF9E70);
+        }
+        
+        .faq-section h2 {
+            text-align: center;
+            font-size: 2.4rem;
+            margin-bottom: 50px;
+            color: #333;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .faq-section h2:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #FF6B35;
+            border-radius: 2px;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 40px auto 0;
+        }
+        
+        .faq-item {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+            margin-bottom: 20px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+        
+        .faq-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+        }
+        
+        .faq-item.active {
+            border-left: 4px solid #FF6B35;
+        }
+        
+        .faq-question {
+            padding: 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #444;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background-color: rgba(255, 107, 53, 0.05);
+        }
+        
+        .faq-question i {
+            color: #FF6B35;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.active .faq-question {
+            background-color: rgba(255, 107, 53, 0.05);
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            line-height: 1.7;
+            color: #555;
+            font-size: 1.05rem;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 0 25px 25px;
+            max-height: 500px;
+        }
+        
+        .btn-primary {
+            background-color: #FF6B35;
+            color: #fff;
+            border: none;
+            padding: 14px 28px;
+            font-size: 1.05rem;
+            box-shadow: 0 8px 15px rgba(255, 107, 53, 0.3);
+            border-radius: 8px;
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(255, 107, 53, 0.4);
+            background: linear-gradient(135deg, #FF6B35 0%, #FF9E70 100%);
+        }
+        
+        .contact-info ul.contact-details li div span.form-note {
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        /* Photo upload styles */
+        .photo-preview {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .photo-preview-item {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .photo-preview-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .photo-preview-item .remove-photo {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: rgba(0,0,0,0.6);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            font-size: 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        #photos {
+            padding: 10px 0;
+        }
+        
+        .file-upload-error {
+            color: #e74c3c;
+            font-size: 0.85em;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu Overlay -->
+    <div class="menu-overlay"></div>
+    
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" class="logo">
+                    <img src="images/Capture-One-Catalog0815.jpg" alt="Kings Electrical Logo">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="has-dropdown">
+                        <a href="services.html">Services</a>
+                        <ul class="dropdown">
+                            <li><a href="services/heat-pump-solutions.html">Heat Pump Solutions</a></li>
+                            <li><a href="services/electrical-services.html">Electrical Services</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-contact">
+                <a href="tel:+6433771546" class="phone-number"><i class="fas fa-phone"></i> 03 377 1546</a>
+                <a href="contact.html" class="btn btn-primary"><span>Contact Us</span></a>
+                <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>Get in touch with our team for all your electrical and heat pump needs</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-form">
+                    <div class="form-header">
+                        <h2>Send Us a Message</h2>
+                        <p>Fill out the form below and we'll get back to you as soon as possible.</p>
+                    </div>
+                    
+                    <form id="contactForm" action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Service Required</label>
+                            <select id="service" name="service">
+                                <option value="">Select a Service</option>
+                                <option value="heat-pump">Heat Pump Installation/Service</option>
+                                <option value="electrical">Electrical Services</option>
+                                <option value="emergency">Emergency Service</option>
+                                <option value="quote">Request a Quote</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" required></textarea>
+                            <p class="form-note">Please provide details about your project or inquiry.</p>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="photos">Upload Photos (Optional)</label>
+                            <input type="file" id="photos" name="photos" multiple accept="image/*">
+                            <p class="form-note">Upload photos of your project or issue (max 5 files, 5MB each)</p>
+                            <div id="photo-preview" class="photo-preview"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="preferred-contact">Preferred Contact Method</label>
+                            <select id="preferred-contact" name="preferred-contact">
+                                <option value="email">Email</option>
+                                <option value="phone">Phone</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%;"><span>Send Message</span></button>
+                    </form>
+                </div>
+                
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <ul class="contact-details">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Address:</strong><br>
+                                123 Main Street<br>
+                                Christchurch, 8011<br>
+                                New Zealand
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong>Phone:</strong><br>
+                                <a href="tel:+6433771546">03 377 1546</a><br>
+                                <span class="form-note">For emergency service: 0800 808 448</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email:</strong><br>
+                                <a href="mailto:info@kingselectrical.co.nz">info@kingselectrical.co.nz</a>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <h3>Business Hours</h3>
+                    <ul class="business-hours">
+                        <li>
+                            <span>Monday - Friday:</span>
+                            <span>7:30am - 5:00pm</span>
+                        </li>
+                        <li>
+                            <span>Saturday:</span>
+                            <span>8:00am - 1:00pm</span>
+                        </li>
+                        <li>
+                            <span>Sunday:</span>
+                            <span>Closed</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="emergency-note">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <div>
+                            <strong>24/7 Emergency Service Available</strong><br>
+                            Call us anytime for urgent electrical issues.
+                        </div>
+                    </div>
+                    
+                    <div class="contact-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d46302.65258743275!2d172.61219491976716!3d-43.531417946512414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d318a28139719c7%3A0x9078821a3e7acc63!2sChristchurch%20Central%2C%20Christchurch%208011!5e0!3m2!1sen!2snz!4v1722624753026!5m2!1sen!2snz" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 style="text-align: center;">Frequently Asked Questions</h2>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How quickly can you respond to service requests?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>For standard service requests, we typically respond within 24-48 hours. For emergency situations, we offer 24/7 service and aim to have a technician on-site as quickly as possible, often within 1-2 hours in the Christchurch area.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you provide free quotes?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we provide free, no-obligation quotes for all electrical and heat pump projects. Simply contact us through this form or give us a call, and we'll arrange for one of our technicians to assess your needs and provide a detailed quote.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What areas do you service?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We service all of Christchurch and surrounding areas, including Riccarton, Merivale, Fendalton, Cashmere, Addington, Papanui, Hornby, Sydenham, Ilam, Avonhead, and the Christchurch CBD. For locations outside these areas, please contact us to discuss availability.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Are your electricians licensed and insured?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely. All our electricians are fully licensed, certified, and insured. We maintain all necessary qualifications and stay up-to-date with the latest industry standards and safety regulations to ensure the highest quality of work.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you offer warranties on your work?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we stand behind our work with a comprehensive workmanship warranty. Additionally, all products we install come with manufacturer warranties. We'll explain the specific warranty details for your project during the quoting process.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="about.html#team">Our Team</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="services/commercial-electrical.html">Commercial Electrical</a></li>
+                        <li><a href="services/residential-electrical.html">Residential Electrical</a></li>
+                        <li><a href="services/heat-pump-solutions.html">Heat Pump Solutions</a></li>
+                        <li><a href="services/emergency-services.html">Emergency Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul class="contact-details">
+                        <li><i class="fas fa-phone"></i> <a href="tel:+6433771546">03 377 1546</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@kingselectrical.co.nz">info@kingselectrical.co.nz</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Main Street, Christchurch</li>
+                    </ul>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Kings Electrical. All rights reserved.</p>
+                <ul class="footer-links">
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms-of-service.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Form submission handler
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Here you would normally send the form data to your server
+            // For demonstration, we'll just show a success message
+            
+            alert('Thank you for your message! We will get back to you as soon as possible.');
+            contactForm.reset();
+        });
+        
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', function() {
+                // Close all other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+    });
+    </script>
+</body>
+</html> 

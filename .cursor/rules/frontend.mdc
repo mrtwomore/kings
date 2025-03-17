@@ -1,0 +1,14 @@
+---
+description: Frontend Coding Standards
+globs: *.tsx
+alwaysApply: false
+---
+
+# Your rule content
+
+# Frontend Guidelines
+
+- Always prefer functional React components (no class components).
+- Use Tailwind CSS utility classes consistently.
+- Avoid inline styles; use CSS modules if custom styles are necessary.
+- Components should have clear, descriptive naming.

@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Kings Electrical</title>
+    <meta name="description" content="Learn about Kings Electrical - trusted electrical and heat pump specialists in Christchurch with over 20 years of experience.">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Additional styles for About page */
+        .about-section {
+            padding: 80px 0;
+        }
+        
+        .about-intro {
+            max-width: 800px;
+            margin: 0 auto 80px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .about-intro h2 {
+            font-size: 2.4rem;
+            margin-bottom: 25px;
+            color: #333;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .about-intro h2:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #008B8B;
+            border-radius: 2px;
+        }
+        
+        .about-intro p {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color: #555;
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+        
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+        
+        .about-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            transform: translateY(0);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .about-image:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .about-content h2 {
+            margin-top: 0;
+            margin-bottom: 25px;
+            color: #333;
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .about-content h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: #008B8B;
+            border-radius: 2px;
+        }
+        
+        .about-content p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #555;
+        }
+        
+        .about-content ul {
+            margin-bottom: 25px;
+            padding-left: 20px;
+        }
+        
+        .about-content ul li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 15px;
+        }
+        
+        .about-content ul li:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #008B8B;
+        }
+        
+        .about-content strong {
+            color: #444;
+        }
+        
+        .values-section {
+            background-color: #f9f9f9;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .values-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(to right, #008B8B, #4ECDC4);
+        }
+        
+        .values-intro {
+            max-width: 700px;
+            margin: 0 auto 60px;
+            text-align: center;
+        }
+        
+        .values-intro h2 {
+            font-size: 2.4rem;
+            margin-bottom: 25px;
+            color: #333;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .values-intro h2:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #008B8B;
+            border-radius: 2px;
+        }
+        
+        .values-intro p {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color: #555;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .value-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 40px 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+        }
+        
+        .value-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, rgba(0, 139, 139, 0.1) 0%, rgba(78, 205, 196, 0.1) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: #008B8B;
+            font-size: 1.8rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .value-card:hover .value-icon {
+            transform: rotateY(180deg);
+            background-color: rgba(0, 139, 139, 0.15);
+        }
+        
+        .value-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .value-card p {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            color: #555;
+        }
+        
+        .team-section {
+            padding: 80px 0;
+            background: linear-gradient(to bottom, #fff 0%, #f5f5f5 100%);
+        }
+        
+        .team-intro {
+            max-width: 700px;
+            margin: 0 auto 60px;
+            text-align: center;
+        }
+        
+        .team-intro h2 {
+            font-size: 2.4rem;
+            margin-bottom: 25px;
+            color: #333;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .team-intro h2:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #008B8B;
+            border-radius: 2px;
+        }
+        
+        .team-intro p {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color: #555;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 40px;
+        }
+        
+        .team-member {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        }
+        
+        .team-image {
+            height: 280px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .team-image:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+        }
+        
+        .team-member:hover .team-image:before {
+            opacity: 1;
+        }
+        
+        .team-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .team-member:hover .team-image img {
+            transform: scale(1.1);
+        }
+        
+        .team-content {
+            padding: 25px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .team-content:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 3px;
+            background-color: #008B8B;
+            border-radius: 2px;
+        }
+        
+        .team-content h3 {
+            margin-top: 10px;
+            margin-bottom: 5px;
+            font-size: 1.3rem;
+            color: #333;
+        }
+        
+        .team-role {
+            color: #008B8B;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+        
+        .team-content p {
+            margin-bottom: 0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #555;
+        }
+        
+        .timeline-section {
+            background-color: #f9f9f9;
+            padding: 80px 0;
+            position: relative;
+        }
+        
+        .timeline-intro {
+            max-width: 700px;
+            margin: 0 auto 60px;
+            text-align: center;
+        }
+        
+        .timeline-intro h2 {
+            font-size: 2.4rem;
+            margin-bottom: 25px;
+            color: #333;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .timeline-intro h2:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #008B8B;
+            border-radius: 2px;
+        }
+        
+        .timeline-intro p {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color: #555;
+        }
+        
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            background: linear-gradient(to bottom, #008B8B 0%, #4ECDC4 100%);
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 60px;
+        }
+        
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .timeline-content {
+            background: #fff;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            width: calc(50% - 40px);
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: auto;
+        }
+        
+        .timeline-content h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #333;
+            font-size: 1.3rem;
+        }
+        
+        .timeline-content p {
+            margin-bottom: 0;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #555;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: -15px;
+            width: 30px;
+            height: 30px;
+            background: #fff;
+            transform: rotate(45deg);
+            box-shadow: -5px 5px 10px rgba(0,0,0,0.08);
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            right: -15px;
+            width: 30px;
+            height: 30px;
+            background: #fff;
+            transform: rotate(45deg);
+            box-shadow: 5px -5px 10px rgba(0,0,0,0.08);
+        }
+        
+        .timeline-date {
+            position: absolute;
+            top: 15px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #008B8B 0%, #4ECDC4 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(0, 139, 139, 0.3);
+            z-index: 2;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-date {
+            left: -90px;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-date {
+            right: -90px;
+        }
+        
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-content {
+                width: calc(100% - 80px);
+                margin-left: 80px !important;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content::before,
+            .timeline-item:nth-child(even) .timeline-content::before {
+                left: -15px;
+                right: auto;
+                top: 20px;
+                box-shadow: -5px 5px 10px rgba(0,0,0,0.08);
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-date,
+            .timeline-item:nth-child(even) .timeline-date {
+                left: 0;
+                right: auto;
+            }
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #008B8B 0%, #4ECDC4 100%);
+            padding: 80px 0;
+            color: #fff;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.4rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-section .btn-primary {
+            background-color: #fff;
+            color: #008B8B;
+            border: 2px solid #fff;
+            font-size: 1.1rem;
+            padding: 14px 30px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .cta-section .btn-primary:hover {
+            background-color: transparent;
+            color: #fff;
+        }
+        
+        .cta-section .btn-primary span {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #008B8B;
+            border-radius: 2px;
+        }
+        
+        .timeline-dot {
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(135deg, #008B8B 0%, #4ECDC4 100%);
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+        
+        .team-member-social a:hover {
+            background: #008B8B;
+            color: #fff;
+        }
+        
+        .btn-primary {
+            background-color: #008B8B;
+            color: #fff;
+            border: none;
+            padding: 14px 28px;
+            font-size: 1.05rem;
+            box-shadow: 0 8px 15px rgba(0, 139, 139, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0, 139, 139, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu Overlay -->
+    <div class="menu-overlay"></div>
+    
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" class="logo">
+                    <img src="images/Capture-One-Catalog0815.jpg" alt="Kings Electrical Logo">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="has-dropdown">
+                        <a href="services.html">Services</a>
+                        <ul class="dropdown">
+                            <li><a href="services/heat-pump-solutions.html">Heat Pump Solutions</a></li>
+                            <li><a href="services/electrical-services.html">Electrical Services</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-contact">
+                <a href="tel:+6433771546" class="phone-number"><i class="fas fa-phone"></i> 03 377 1546</a>
+                <a href="contact.html" class="btn btn-primary"><span>Contact Us</span></a>
+                <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>About Kings Electrical</h1>
+            <p>Your trusted electrical and heat pump specialists in Christchurch</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-intro">
+                <h2>Our Story</h2>
+                <p>Kings Electrical has been serving the Christchurch community for over 20 years, providing professional electrical and heat pump services to residential and commercial clients.</p>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="images/Capture-One-Catalog0815.jpg" alt="Kings Electrical Team">
+                </div>
+                <div class="about-content">
+                    <h2>Who We Are</h2>
+                    <p>Founded in 2003, Kings Electrical started as a small family business with a commitment to quality workmanship and exceptional customer service. Over the years, we've grown into one of Christchurch's most trusted electrical service providers, while maintaining our dedication to personalized service.</p>
+                    <p>Our team consists of fully certified electricians and heat pump specialists with a wealth of experience across all aspects of electrical work. We pride ourselves on staying ahead of industry developments and investing in ongoing training to ensure we deliver the most efficient and innovative solutions to our clients.</p>
+                    <p>From basic repairs to complex installations, we approach every project with the same level of care and professionalism, ensuring that our customers receive the highest quality service every time.</p>
+                </div>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-content">
+                    <h2>Our Approach</h2>
+                    <p>At Kings Electrical, we believe in doing things right the first time. Our approach is built on three key principles:</p>
+                    <ul>
+                        <li><strong>Quality:</strong> We never compromise on the quality of our workmanship or the materials we use.</li>
+                        <li><strong>Transparency:</strong> We provide clear, detailed quotes with no hidden costs or surprises.</li>
+                        <li><strong>Reliability:</strong> We show up when we say we will and complete projects within the agreed timeframe.</li>
+                    </ul>
+                    <p>We understand that inviting service providers into your home or business requires trust. That's why we go the extra mile to ensure every interaction with Kings Electrical exceeds your expectations.</p>
+                </div>
+                <div class="about-image">
+                    <img src="images/Capture-One-Catalog0477.jpg" alt="Kings Electrical Work">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values Section -->
+    <section class="values-section" id="values">
+        <div class="container">
+            <div class="values-intro">
+                <h2>Our Core Values</h2>
+                <p>These fundamental principles guide everything we do at Kings Electrical.</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Excellence</h3>
+                    <p>We strive for excellence in every aspect of our service, from the first phone call to the final inspection.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Integrity</h3>
+                    <p>We operate with honesty and transparency, building trust through our actions and standing behind our work.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Community</h3>
+                    <p>We're proud to be part of the Christchurch community and committed to making a positive impact.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Team Section -->
+    <section class="team-section" id="team">
+        <div class="container">
+            <div class="team-intro">
+                <h2>Meet Our Team</h2>
+                <p>Our experienced professionals are the heart of Kings Electrical.</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-image">
+                        <img src="images/Capture-One-Catalog0317.jpg" alt="Mark Wilson">
+                    </div>
+                    <div class="team-content">
+                        <h3>Mark Wilson</h3>
+                        <span class="team-role">Founder & Director</span>
+                        <p>With over 25 years in the electrical industry, Mark founded Kings Electrical with a vision of providing exceptional quality service.</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="team-image">
+                        <img src="images/Capture-One-Catalog0477.jpg" alt="Sarah Thompson">
+                    </div>
+                    <div class="team-content">
+                        <h3>Sarah Thompson</h3>
+                        <span class="team-role">Heat Pump Specialist</span>
+                        <p>Sarah leads our heat pump division, bringing 15 years of specialized experience in climate control solutions.</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="team-image">
+                        <img src="images/Capture-One-Catalog0490-e1722552518279.jpg" alt="David Chen">
+                    </div>
+                    <div class="team-content">
+                        <h3>David Chen</h3>
+                        <span class="team-role">Senior Electrician</span>
+                        <p>David specializes in commercial electrical systems and has been with Kings Electrical for over 10 years.</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="team-image">
+                        <img src="images/Capture-One-Catalog0508-1.jpg" alt="Emma Lewis">
+                    </div>
+                    <div class="team-content">
+                        <h3>Emma Lewis</h3>
+                        <span class="team-role">Operations Manager</span>
+                        <p>Emma ensures that all projects run smoothly from start to finish, coordinating our team to deliver on time, every time.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our History Timeline Section -->
+    <section class="timeline-section" id="history">
+        <div class="container">
+            <div class="timeline-intro">
+                <h2>Our Journey</h2>
+                <p>The evolution of Kings Electrical from a small local business to a trusted industry leader.</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2003</div>
+                    <div class="timeline-content">
+                        <h3>Humble Beginnings</h3>
+                        <p>Kings Electrical was founded as a one-man operation, focusing on residential electrical services in Christchurch.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2008</div>
+                    <div class="timeline-content">
+                        <h3>Expanding Services</h3>
+                        <p>Added heat pump installation and servicing to our offerings, expanding our team to five technicians.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2011</div>
+                    <div class="timeline-content">
+                        <h3>Post-Earthquake Rebuild</h3>
+                        <p>Played a significant role in Christchurch's rebuild efforts after the earthquakes, supporting our community.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2015</div>
+                    <div class="timeline-content">
+                        <h3>Commercial Division</h3>
+                        <p>Launched our specialized commercial services division to meet growing demand from business clients.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2020</div>
+                    <div class="timeline-content">
+                        <h3>Energy Efficiency Focus</h3>
+                        <p>Developed our energy efficiency assessment and solution services to help clients reduce energy costs.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2023</div>
+                    <div class="timeline-content">
+                        <h3>Today</h3>
+                        <p>Now a team of 15 specialists, we continue to grow while maintaining our commitment to quality and personal service.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to work with us?</h2>
+            <p>Contact our team today to discuss your electrical or heat pump needs.</p>
+            <a href="contact.html" class="btn btn-primary"><span>Get in Touch</span></a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="about.html#team">Our Team</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="services/commercial-electrical.html">Commercial Electrical</a></li>
+                        <li><a href="services/residential-electrical.html">Residential Electrical</a></li>
+                        <li><a href="services/heat-pump-solutions.html">Heat Pump Solutions</a></li>
+                        <li><a href="services/emergency-services.html">Emergency Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul class="contact-details">
+                        <li><i class="fas fa-phone"></i> <a href="tel:+6433771546">03 377 1546</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@kingselectrical.co.nz">info@kingselectrical.co.nz</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Main Street, Christchurch</li>
+                    </ul>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Kings Electrical. All rights reserved.</p>
+                <ul class="footer-links">
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms-of-service.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html> 

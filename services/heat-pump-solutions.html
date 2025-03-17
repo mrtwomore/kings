@@ -1,0 +1,2008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Superior Heat Pump Installation & Service | Christchurch Climate Experts</title>
+    <meta name="description" content="Professional heat pump solutions for year-round comfort. Expert installation, maintenance & repairs with energy-saving technology. 5-year workmanship guarantee.">
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Additional styles for Service page */
+        .service-hero {
+            background: linear-gradient(to bottom, #f9f9f9 0%, #f0f0f0 100%);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, #FF6B35, #FF9E70);
+            z-index: 2;
+        }
+        
+        .service-hero-content {
+            max-width: 850px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .service-hero h1 {
+            margin-bottom: 25px;
+            color: #333;
+            font-size: 3rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .service-hero h1:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #FF6B35;
+            border-radius: 2px;
+        }
+        
+        .service-hero p {
+            font-size: 1.25rem;
+            margin-bottom: 40px;
+            color: #555;
+            line-height: 1.7;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .service-section {
+            padding: 80px 0;
+            position: relative;
+        }
+        
+        .service-section:nth-child(even) {
+            background: linear-gradient(to bottom, #f9f9f9 0%, #f0f0f0 100%);
+        }
+        
+        .service-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        @media (max-width: 768px) {
+            .service-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+        }
+        
+        .service-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            transform: translateY(0);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        
+        .service-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.3) 0%, rgba(0, 0, 0, 0) 60%);
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .service-image:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        
+        .service-image:hover::before {
+            opacity: 1;
+        }
+        
+        .service-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .service-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .service-content h2 {
+            margin-top: 0;
+            margin-bottom: 25px;
+            color: #333;
+            font-size: 2.2rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .service-content h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 70px;
+            height: 3px;
+            background-color: #FF6B35;
+            border-radius: 2px;
+        }
+        
+        .service-content p {
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #555;
+        }
+        
+        .service-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px;
+            background: rgba(255, 107, 53, 0.03);
+            border-radius: 12px;
+            padding: 25px 30px;
+            border-left: 4px solid #FF6B35;
+        }
+        
+        .service-features li {
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+            color: #444;
+            transition: transform 0.3s ease;
+        }
+        
+        .service-features li:hover {
+            transform: translateX(5px);
+            color: #FF6B35;
+        }
+        
+        .service-features li:before {
+            content: '\f00c';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            color: #fff;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            width: 25px;
+            height: 25px;
+            background: linear-gradient(135deg, #FF6B35 0%, #FF9E70 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            box-shadow: 0 3px 8px rgba(255, 107, 53, 0.3);
+        }
+        
+        .service-features li strong {
+            color: #FF6B35;
+        }
+        
+        .benefits-section {
+            padding: 80px 0;
+            background: linear-gradient(to bottom, #f9f9f9 0%, #f0f0f0 100%);
+            position: relative;
+        }
+        
+        .benefits-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, #FF6B35, #FF9E70);
+        }
+        
+        .benefits-intro {
+            max-width: 750px;
+            margin: 0 auto 60px;
+            text-align: center;
+        }
+        
+        .benefits-intro h2 {
+            font-size: 2.4rem;
+            margin-bottom: 25px;
+            color: #333;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .benefits-intro h2:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #FF6B35;
+            border-radius: 2px;
+        }
+        
+        .benefits-intro p {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color: #555;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+        
+        .benefit-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, #FF6B35, #FF9E70);
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .benefit-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 25px;
+            background: linear-gradient(135deg, #FF6B35 0%, #FF9E70 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 20px rgba(255, 107, 53, 0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .benefit-card:hover .benefit-icon {
+            transform: scale(1.1);
+        }
+        
+        .benefit-icon i {
+            font-size: 2rem;
+            color: #fff;
+        }
+        
+        .benefit-card h3 {
+            margin: 0 0 15px;
+            color: #333;
+            font-size: 1.5rem;
+        }
+        
+        .benefit-card:hover h3 {
+            color: #FF6B35;
+        }
+        
+        .benefit-card p {
+            margin: 0;
+            color: #555;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+        
+        .brands-section {
+            padding: 80px 0;
+        }
+        
+        .brands-intro {
+            max-width: 750px;
+            margin: 0 auto 60px;
+            text-align: center;
+        }
+        
+        .brands-intro h2 {
+            font-size: 2.4rem;
+            margin-bottom: 25px;
+            color: #333;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .brands-intro h2:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #FF6B35;
+            border-radius: 2px;
+        }
+        
+        .brands-intro p {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color: #555;
+        }
+        
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            align-items: center;
+        }
+        
+        @media (max-width: 768px) {
+            .brands-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        .brand-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 107, 53, 0.1);
+        }
+        
+        .brand-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+            border-color: rgba(255, 107, 53, 0.3);
+        }
+        
+        .brand-logo {
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+        
+        .brand-logo img {
+            max-width: 100%;
+            max-height: 60px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+            filter: grayscale(30%);
+        }
+        
+        .brand-card:hover .brand-logo img {
+            transform: scale(1.1);
+            filter: grayscale(0%);
+        }
+        
+        .brand-card h3 {
+            margin-top: 5px;
+            margin-bottom: 10px;
+            color: #333;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+        
+        .brand-card:hover h3 {
+            color: #FF6B35;
+        }
+        
+        .process-section {
+            padding: 80px 0;
+            background: linear-gradient(to bottom, #f9f9f9 0%, #f0f0f0 100%);
+            position: relative;
+        }
+        
+        .process-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, #FF6B35, #FF9E70);
+        }
+        
+        .process-intro {
+            max-width: 750px;
+            margin: 0 auto 60px;
+            text-align: center;
+        }
+        
+        .process-intro h2 {
+            font-size: 2.4rem;
+            margin-bottom: 25px;
+            color: #333;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .process-intro h2:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #FF6B35;
+            border-radius: 2px;
+        }
+        
+        .process-intro p {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color: #555;
+        }
+        
+        .process-steps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+        
+        .process-step {
+            flex: 1;
+            min-width: 250px;
+            max-width: 350px;
+            background: #fff;
+            border-radius: 15px;
+            padding: 40px 30px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            z-index: 1;
+            overflow: hidden;
+        }
+        
+        .process-step::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, #FF6B35, #FF9E70);
+            z-index: -1;
+        }
+        
+        .process-step:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #FF6B35 0%, #FF9E70 100%);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.7rem;
+            font-weight: 700;
+            margin: 0 auto 25px;
+            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .process-step:hover .step-number {
+            transform: scale(1.1);
+        }
+        
+        .process-step h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #333;
+            font-size: 1.4rem;
+        }
+        
+        .process-step p {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 0;
+        }
+        
+        .testimonials-section {
+            padding: 80px 0;
+        }
+        
+        .testimonials-intro {
+            max-width: 750px;
+            margin: 0 auto 60px;
+            text-align: center;
+        }
+        
+        .testimonials-intro h2 {
+            font-size: 2.4rem;
+            margin-bottom: 25px;
+            color: #333;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .testimonials-intro h2:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #FF6B35;
+            border-radius: 2px;
+        }
+        
+        .testimonials-intro p {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color: #555;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+        }
+        
+        .testimonial-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 35px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            transform: translateY(0);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 5px solid #FF6B35;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 25px;
+            position: relative;
+            color: #555;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+        
+        .testimonial-content:before {
+            content: '\f10d';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            color: rgba(255, 107, 53, 0.1);
+            font-size: 2.5rem;
+            position: absolute;
+            left: -15px;
+            top: -20px;
+            z-index: -1;
+        }
+        
+        .testimonial-client {
+            display: flex;
+            align-items: center;
+        }
+        
+        .client-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 20px;
+            border: 3px solid rgba(255, 107, 53, 0.2);
+            padding: 2px;
+            transition: transform 0.3s ease;
+        }
+        
+        .testimonial-card:hover .client-image {
+            transform: scale(1.1);
+        }
+        
+        .client-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        
+        .client-info h4 {
+            margin: 0 0 5px;
+            font-size: 1.2rem;
+            color: #333;
+        }
+        
+        .client-info p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: #FF6B35;
+            font-weight: 600;
+        }
+        
+        .faq-section {
+            padding: 80px 0;
+            background: linear-gradient(to bottom, #f9f9f9 0%, #f0f0f0 100%);
+            position: relative;
+        }
+        
+        .faq-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, #FF6B35, #FF9E70);
+        }
+        
+        .faq-intro {
+            max-width: 750px;
+            margin: 0 auto 60px;
+            text-align: center;
+        }
+        
+        .faq-intro h2 {
+            font-size: 2.4rem;
+            margin-bottom: 25px;
+            color: #333;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .faq-intro h2:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #FF6B35;
+            border-radius: 2px;
+        }
+        
+        .faq-intro p {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color: #555;
+        }
+        
+        .faq-container {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+        
+        .faq-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        }
+        
+        .faq-item.active {
+            border-left: 4px solid #FF6B35;
+        }
+        
+        .faq-question {
+            padding: 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #444;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background-color: rgba(255, 107, 53, 0.05);
+        }
+        
+        .faq-question i {
+            color: #FF6B35;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.active .faq-question {
+            background-color: rgba(255, 107, 53, 0.05);
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            line-height: 1.7;
+            color: #555;
+            font-size: 1.05rem;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 0 25px 25px;
+            max-height: 500px;
+        }
+        
+        .btn-primary {
+            background-color: #FF6B35;
+            color: #fff;
+            border: none;
+            padding: 14px 28px;
+            font-size: 1.05rem;
+            box-shadow: 0 8px 15px rgba(255, 107, 53, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(255, 107, 53, 0.4);
+        }
+        
+        .btn-secondary {
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #FF6B35;
+            border: 2px solid #FF6B35;
+            padding: 12px 26px;
+            font-size: 1.05rem;
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.15);
+        }
+        
+        .btn-secondary:hover {
+            background-color: #FF6B35;
+            color: #fff;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 107, 53, 0.25);
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #FF6B35 0%, #FF9E70 100%);
+            color: #fff;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .cta-button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        /* Facts & Figures Section Styles */
+        .facts-section {
+            padding: 80px 0;
+            background: linear-gradient(to bottom, #fff 0%, #f8f8f8 100%);
+            position: relative;
+        }
+        
+        .facts-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, #FF6B35, #FF9E70);
+        }
+        
+        .facts-intro {
+            max-width: 750px;
+            margin: 0 auto 60px;
+            text-align: center;
+        }
+        
+        .facts-intro h2 {
+            font-size: 2.4rem;
+            margin-bottom: 25px;
+            color: #333;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .facts-intro h2:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #FF6B35;
+            border-radius: 2px;
+        }
+        
+        .facts-intro p {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color: #555;
+        }
+        
+        .facts-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        @media (max-width: 768px) {
+            .facts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .fact-card {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .fact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .fact-header {
+            background: linear-gradient(135deg, #FF6B35 0%, #FF9E70 100%);
+            padding: 20px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+        }
+        
+        .fact-header i {
+            font-size: 2rem;
+            margin-right: 15px;
+        }
+        
+        .fact-header h3 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        
+        .fact-content {
+            padding: 25px;
+        }
+        
+        .fact-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px;
+        }
+        
+        .fact-list li {
+            padding: 10px 0;
+            border-bottom: 1px dashed #eee;
+            font-size: 1.05rem;
+            color: #444;
+        }
+        
+        .fact-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .fact-list li strong {
+            color: #FF6B35;
+        }
+        
+        .fact-cta {
+            text-align: center;
+        }
+        
+        .comparison-table {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            padding: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .comparison-table h3 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #333;
+            font-size: 1.8rem;
+        }
+        
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .comparison-table th, .comparison-table td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .comparison-table th {
+            background-color: rgba(255, 107, 53, 0.1);
+            color: #333;
+            font-weight: 600;
+        }
+        
+        .comparison-table tr:hover td {
+            background-color: rgba(255, 107, 53, 0.03);
+        }
+        
+        .comparison-table tr td:first-child {
+            text-align: left;
+            font-weight: 500;
+        }
+        
+        .comparison-table tr:first-child {
+            color: #FF6B35;
+            font-weight: 600;
+        }
+        
+        .comparison-table tr:hover td:first-child {
+            color: #FF6B35;
+        }
+        
+        .table-note {
+            margin-top: 15px;
+            text-align: center;
+            font-style: italic;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .customer-results {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
+        
+        .customer-results h3 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+            font-size: 1.8rem;
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .result-card {
+            background: linear-gradient(to bottom, #f9f9f9 0%, #f0f0f0 100%);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border-top: 3px solid #FF6B35;
+        }
+        
+        .result-header {
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px dashed #ddd;
+        }
+        
+        .result-header img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            border: 3px solid rgba(255, 107, 53, 0.2);
+        }
+        
+        .result-header h4 {
+            margin: 0;
+            color: #333;
+        }
+        
+        .result-stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #FF6B35;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+            display: block;
+            margin-top: 5px;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(255, 107, 53, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 107, 53, 0);
+            }
+        }
+
+        .btn-primary:active {
+            background-color: #FF9E70;
+        }
+
+        .btn-secondary:active {
+            background-color: #FF9E70;
+            border-color: #FF9E70;
+        }
+
+        ::selection {
+            background-color: rgba(255, 107, 53, 0.2);
+            color: #FF6B35;
+        }
+
+        .site-footer {
+            background: #f8f8f8;
+            padding: 60px 0 30px;
+            border-top: 5px solid #FF6B35;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo {
+            max-width: 200px;
+        }
+
+        .footer-logo img {
+            width: 100%;
+            height: auto;
+            max-height: 80px;
+            object-fit: contain;
+        }
+
+        .footer-contact h3,
+        .footer-hours h3,
+        .footer-social h3 {
+            color: #333;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-contact h3:after,
+        .footer-hours h3:after,
+        .footer-social h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: #FF6B35;
+            border-radius: 2px;
+        }
+
+        .footer-contact p,
+        .footer-hours p {
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .footer-contact a {
+            color: #FF6B35;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-contact a:hover {
+            color: #FF9E70;
+        }
+
+        .footer-contact i {
+            color: #FF6B35;
+            width: 20px;
+            margin-right: 10px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            background: #FF6B35;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background: #FF9E70;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 107, 53, 0.1);
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-bottom p {
+            color: #666;
+            margin: 0;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-links a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #FF6B35;
+        }
+
+        @media (max-width: 768px) {
+            .footer-top {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-logo {
+                margin: 0 auto;
+            }
+
+            .footer-contact h3:after,
+            .footer-hours h3:after,
+            .footer-social h3:after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                justify-content: center;
+            }
+        }
+
+        /* Heat Pump Calculator Styles */
+        .calculator-section {
+            padding: 80px 0;
+            background: #fff;
+        }
+
+        .calculator-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .calculator-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .calculator-header h2 {
+            font-size: 2.4rem;
+            color: #333;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .calculator-header h2:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #FF6B35;
+            border-radius: 2px;
+        }
+
+        .calculator-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .calculator-form {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #444;
+            font-weight: 500;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            border-color: #FF6B35;
+            outline: none;
+        }
+
+        .calculator-result {
+            background: linear-gradient(135deg, #FF6B35 0%, #FF9E70 100%);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            color: #fff;
+            margin-top: 30px;
+            display: none;
+        }
+
+        .calculator-result.show {
+            display: block;
+        }
+
+        .calculate-btn {
+            background: linear-gradient(135deg, #FF6B35 0%, #FF9E70 100%);
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: block;
+            margin: 30px auto;
+            font-weight: 600;
+        }
+
+        .calculate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu Overlay -->
+    <div class="menu-overlay"></div>
+    
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html" class="logo">
+                    <img src="../images/Capture-One-Catalog0815.jpg" alt="Kings Electrical Logo">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li class="has-dropdown">
+                        <a href="../services.html" class="active">Services</a>
+                        <ul class="dropdown">
+                            <li><a href="heat-pump-solutions.html" class="active">Heat Pump Solutions</a></li>
+                            <li><a href="electrical-services.html">Electrical Services</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../about.html">About Us</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-contact">
+                <a href="tel:+6433771546" class="phone-number"><i class="fas fa-phone"></i> 03 377 1546</a>
+                <a href="../contact.html" class="btn btn-primary"><span>Contact Us</span></a>
+                <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Service Hero Section -->
+    <section class="service-hero">
+        <div class="container">
+            <div class="service-hero-content">
+                <h1>Heat Pump Solutions</h1>
+                <p>Expert heat pump services for optimal comfort and energy efficiency in your home or business. From installation and servicing to repairs and upgrades.</p>
+                <a href="../contact.html" class="btn btn-primary"><span>Request a Free Quote</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Heat Pump Installation Section -->
+    <section class="service-section">
+        <div class="container">
+            <div class="service-grid">
+                <div class="service-image">
+                    <img src="../images/Capture-One-Catalog0490-e1722552518279.jpg" alt="Heat Pump Installation">
+                </div>
+                <div class="service-content">
+                    <h2>Heat Pump Installation</h2>
+                    <p>Our professional heat pump installation service ensures you get the perfect climate control solution for your home or business. We handle everything from initial assessment to final setup and demonstration.</p>
+                    <ul class="service-features">
+                        <li>Comprehensive site assessment and heat load calculation</li>
+                        <li>Expert advice on the best heat pump model for your needs</li>
+                        <li>Professional installation by certified technicians</li>
+                        <li>Optimal unit placement for maximum efficiency</li>
+                        <li>Proper pipe and electrical installation</li>
+                        <li>System testing and performance verification</li>
+                        <li>Full system demonstration and user training</li>
+                        <li>Workmanship guarantees and manufacturer warranties</li>
+                    </ul>
+                    <p>We're authorized installers for all major heat pump brands, ensuring you receive full manufacturer warranty coverage and the highest standard of installation.</p>
+                    <a href="../contact.html" class="btn btn-primary"><span>Book an Installation Consultation</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Heat Pump Servicing Section -->
+    <section class="service-section">
+        <div class="container">
+            <div class="service-grid">
+                <div class="service-content">
+                    <h2>Heat Pump Servicing & Maintenance</h2>
+                    <p>Regular servicing is essential to keep your heat pump operating efficiently and extend its lifespan. Our comprehensive maintenance service helps prevent breakdowns and ensures your system performs at its best year-round.</p>
+                    <ul class="service-features">
+                        <li>Deep cleaning of indoor and outdoor units</li>
+                        <li>Filter cleaning and replacement</li>
+                        <li>Refrigerant level check and top-up if required</li>
+                        <li>Coil cleaning and straightening</li>
+                        <li>System pressure testing</li>
+                        <li>Electrical connection inspection</li>
+                        <li>Performance testing and efficiency optimization</li>
+                        <li>Preventative maintenance to avoid future issues</li>
+                    </ul>
+                    <p>We recommend servicing your heat pump at least once a year to maintain optimal performance, especially before the peak usage seasons.</p>
+                    <a href="../contact.html" class="btn btn-primary"><span>Schedule a Service</span></a>
+                </div>
+                <div class="service-image">
+                    <img src="../images/Capture-One-Catalog0477.jpg" alt="Heat Pump Servicing">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Heat Pump Repairs Section -->
+    <section class="service-section">
+        <div class="container">
+            <div class="service-grid">
+                <div class="service-image">
+                    <img src="../images/Capture-One-Catalog0317.jpg" alt="Heat Pump Repairs">
+                </div>
+                <div class="service-content">
+                    <h2>Heat Pump Repairs</h2>
+                    <p>When your heat pump isn't performing as it should, our expert technicians can quickly diagnose and resolve the issue. We service all major brands and models, providing reliable repairs to get your system back up and running.</p>
+                    <ul class="service-features">
+                        <li>Comprehensive system diagnostics</li>
+                        <li>Repair of all heat pump types and brands</li>
+                        <li>Refrigerant leak detection and repair</li>
+                        <li>Electrical fault diagnosis and resolution</li>
+                        <li>Compressor and fan motor repairs or replacement</li>
+                        <li>Control board and sensor repairs</li>
+                        <li>Emergency repair service available</li>
+                        <li>Repairs backed by workmanship warranty</li>
+                    </ul>
+                    <p>Our repair technicians carry a comprehensive range of parts and have extensive experience resolving common and complex heat pump issues.</p>
+                    <a href="tel:+6433771546" class="btn btn-primary"><span>Call for Repair Service</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Heat Pump Upgrades Section -->
+    <section class="service-section">
+        <div class="container">
+            <div class="service-grid">
+                <div class="service-content">
+                    <h2>Heat Pump Upgrades & Replacements</h2>
+                    <p>If your existing heat pump is aging, inefficient, or no longer meeting your needs, our upgrade service can help you transition to a more modern, energy-efficient system. We handle the entire process, from consultation to installation.</p>
+                    <ul class="service-features">
+                        <li>Assessment of your current system's performance</li>
+                        <li>Recommendations for energy-efficient replacements</li>
+                        <li>Guidance on the latest heat pump technology</li>
+                        <li>System sizing and heat load calculations</li>
+                        <li>Safe removal and disposal of old systems</li>
+                        <li>Professional installation of new units</li>
+                        <li>Upgrade of pipework and electrical connections if needed</li>
+                        <li>Full system testing and user instruction</li>
+                    </ul>
+                    <p>Upgrading to a modern heat pump can significantly reduce your energy consumption while improving comfort and performance.</p>
+                    <a href="../contact.html" class="btn btn-primary"><span>Inquire About Upgrades</span></a>
+                </div>
+                <div class="service-image">
+                    <img src="../images/Capture-One-Catalog0508-1.jpg" alt="Heat Pump Upgrades">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Heat Pump Calculator Section -->
+    <section class="calculator-section">
+        <div class="calculator-container">
+            <div class="calculator-header">
+                <h2>Heat Pump Size Calculator</h2>
+                <p>Use our calculator to estimate the recommended heat pump size for your space</p>
+            </div>
+            <form id="heatpumpCalculator" class="calculator-form">
+                <div class="form-group">
+                    <label for="roomLength">Room Length (meters)</label>
+                    <input type="number" id="roomLength" step="0.1" required>
+                </div>
+                <div class="form-group">
+                    <label for="roomWidth">Room Width (meters)</label>
+                    <input type="number" id="roomWidth" step="0.1" required>
+                </div>
+                <div class="form-group">
+                    <label for="ceilingHeight">Ceiling Height (meters)</label>
+                    <input type="number" id="ceilingHeight" step="0.1" value="2.4" required>
+                </div>
+                <div class="form-group">
+                    <label for="insulation">Insulation Level</label>
+                    <select id="insulation" required>
+                        <option value="poor">Poor (Old house, no insulation)</option>
+                        <option value="average" selected>Average (Basic insulation)</option>
+                        <option value="good">Good (Modern insulation)</option>
+                        <option value="excellent">Excellent (Full modern insulation)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="windows">Window Size</label>
+                    <select id="windows" required>
+                        <option value="small">Small (Less than 20% wall area)</option>
+                        <option value="medium" selected>Medium (20-40% wall area)</option>
+                        <option value="large">Large (More than 40% wall area)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="climate">Climate Zone</label>
+                    <select id="climate" required>
+                        <option value="mild">Mild (Coastal areas)</option>
+                        <option value="moderate" selected>Moderate (Most of Canterbury)</option>
+                        <option value="cold">Cold (Alpine/Southern regions)</option>
+                    </select>
+                </div>
+            </form>
+            <button type="button" class="calculate-btn" onclick="calculateHeatPumpSize()">Calculate Recommended Size</button>
+            <div id="calculatorResult" class="calculator-result"></div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="benefits-intro">
+                <h2>Why Choose Heat Pumps?</h2>
+                <p>Heat pumps offer numerous advantages over traditional heating and cooling systems. Here's why they're an excellent choice for your home or business.</p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3>Energy Efficiency</h3>
+                    <p>Heat pumps are incredibly efficient, using up to 75% less electricity than traditional heating systems, resulting in significant cost savings on your energy bills.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-snowflake"></i>
+                    </div>
+                    <h3>Year-Round Comfort</h3>
+                    <p>Modern heat pumps provide both heating and cooling, offering comfortable temperatures throughout all seasons from a single system.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Environmentally Friendly</h3>
+                    <p>With lower energy consumption and no direct burning of fossil fuels, heat pumps produce fewer greenhouse gas emissions than conventional heating systems.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Long Lifespan</h3>
+                    <p>Quality heat pumps can last 15+ years with proper maintenance, offering excellent long-term value for your investment.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-filter"></i>
+                    </div>
+                    <h3>Improved Air Quality</h3>
+                    <p>Heat pumps filter and purify indoor air, removing dust, allergens, and other particulates for a healthier living environment.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-house-user"></i>
+                    </div>
+                    <h3>Increased Property Value</h3>
+                    <p>Energy-efficient heating and cooling systems like heat pumps can enhance your property's value and appeal to potential buyers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Heat Pump Facts & Figures Section -->
+    <section class="facts-section">
+        <div class="container">
+            <div class="facts-intro">
+                <h2>Heat Pump Facts & Figures</h2>
+                <p>Make an informed decision with these concrete numbers and data points about heat pump benefits.</p>
+            </div>
+            
+            <div class="facts-grid">
+                <div class="fact-card">
+                    <div class="fact-header">
+                        <i class="fas fa-dollar-sign"></i>
+                        <h3>Cost Savings</h3>
+                    </div>
+                    <div class="fact-content">
+                        <ul class="fact-list">
+                            <li><strong>30-50% reduction</strong> in annual heating costs compared to electric heaters</li>
+                            <li><strong>$350-$700 savings</strong> per year for typical Christchurch homes</li>
+                            <li><strong>ROI within 3-5 years</strong> on average for quality installations</li>
+                            <li>Up to <strong>80% rebate</strong> (max $3,000) available through Warmer Kiwi Homes program for eligible homeowners</li>
+                        </ul>
+                        <div class="fact-cta">
+                            <a href="../contact.html" class="btn btn-primary"><span>Calculate Your Savings</span></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="fact-card">
+                    <div class="fact-header">
+                        <i class="fas fa-bolt"></i>
+                        <h3>Energy Efficiency</h3>
+                    </div>
+                    <div class="fact-content">
+                        <ul class="fact-list">
+                            <li><strong>COP of 3.0-5.0</strong> - produces 3-5 units of heat for every unit of electricity used</li>
+                            <li><strong>300-500% more efficient</strong> than traditional electric heaters</li>
+                            <li><strong>ENERGY STAR® rated models</strong> use 20-30% less energy than standard models</li>
+                            <li><strong>Smart features</strong> can reduce energy usage by an additional 10-15%</li>
+                        </ul>
+                        <div class="fact-cta">
+                            <a href="../contact.html" class="btn btn-primary"><span>Explore Efficient Models</span></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="fact-card">
+                    <div class="fact-header">
+                        <i class="fas fa-thermometer-half"></i>
+                        <h3>Performance Data</h3>
+                    </div>
+                    <div class="fact-content">
+                        <ul class="fact-list">
+                            <li><strong>Effective down to -15°C</strong> in Christchurch's winter conditions</li>
+                            <li><strong>21°C in 10-15 minutes</strong> - average time to heat a room from cold</li>
+                            <li><strong>15-20 year lifespan</strong> with proper maintenance (5-7 year manufacturer warranties)</li>
+                            <li><strong>50-80% quieter operation</strong> compared to older heating systems</li>
+                        </ul>
+                        <div class="fact-cta">
+                            <a href="../contact.html" class="btn btn-primary"><span>Performance Assessment</span></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="fact-card">
+                    <div class="fact-header">
+                        <i class="fas fa-leaf"></i>
+                        <h3>Environmental Impact</h3>
+                    </div>
+                    <div class="fact-content">
+                        <ul class="fact-list">
+                            <li><strong>70% carbon emission reduction</strong> compared to gas heating systems</li>
+                            <li><strong>1.6 tonnes less CO2</strong> per year for average Christchurch home</li>
+                            <li><strong>Zero direct emissions</strong> at the point of use</li>
+                            <li><strong>R32 refrigerant</strong> with 675 GWP (70% lower environmental impact than older refrigerants)</li>
+                        </ul>
+                        <div class="fact-cta">
+                            <a href="../contact.html" class="btn btn-primary"><span>Green Solutions</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="comparison-table">
+                <h3>Heat Pump vs. Other Heating Solutions</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Heating Method</th>
+                            <th>Efficiency</th>
+                            <th>Annual Running Cost*</th>
+                            <th>Installation Cost</th>
+                            <th>Lifespan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Heat Pump</strong></td>
+                            <td>300-500%</td>
+                            <td>$400-$700</td>
+                            <td>$2,500-$4,000</td>
+                            <td>15-20 years</td>
+                        </tr>
+                        <tr>
+                            <td>Electric Heater</td>
+                            <td>100%</td>
+                            <td>$1,300-$2,100</td>
+                            <td>$100-$500</td>
+                            <td>5-10 years</td>
+                        </tr>
+                        <tr>
+                            <td>Gas Heating</td>
+                            <td>70-90%</td>
+                            <td>$1,000-$1,500</td>
+                            <td>$3,000-$6,000</td>
+                            <td>10-15 years</td>
+                        </tr>
+                        <tr>
+                            <td>Wood Burner</td>
+                            <td>60-80%</td>
+                            <td>$500-$1,200</td>
+                            <td>$3,000-$8,000</td>
+                            <td>10-20 years</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="table-note">*Based on heating a 120m² home in Christchurch for 8 hours per day during winter months</p>
+            </div>
+            
+            <div class="customer-results">
+                <h3>Real Customer Results</h3>
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-header">
+                            <img src="../images/Capture-One-Catalog0490-e1722552518279.jpg" alt="Customer Home">
+                            <h4>Wilson Family, Cashmere</h4>
+                        </div>
+                        <div class="result-stats">
+                            <div class="stat">
+                                <span class="stat-value">42%</span>
+                                <span class="stat-label">Energy Bill Reduction</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">$630</span>
+                                <span class="stat-label">Annual Savings</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">3.8 yrs</span>
+                                <span class="stat-label">ROI Period</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-header">
+                            <img src="../images/Capture-One-Catalog0317.jpg" alt="Customer Business">
+                            <h4>Parkside Café, CBD</h4>
+                        </div>
+                        <div class="result-stats">
+                            <div class="stat">
+                                <span class="stat-value">38%</span>
+                                <span class="stat-label">Energy Bill Reduction</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">$1,450</span>
+                                <span class="stat-label">Annual Savings</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">2.5 yrs</span>
+                                <span class="stat-label">ROI Period</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <div class="process-intro">
+                <h2>Our Process</h2>
+                <p>We're committed to delivering a seamless and efficient experience for our clients. Here's how we handle each step of the process.</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Initial Consultation</h3>
+                    <p>We start by understanding your specific needs and requirements. Our team will assess your property and discuss your heating and cooling preferences.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Design and Quote</h3>
+                    <p>Based on our consultation, we'll design a tailored solution and provide you with a detailed quote. We're transparent about our pricing and ensure you're informed every step of the way.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Installation</h3>
+                    <p>Our professional team will handle the installation, ensuring everything is done to the highest standard. We'll also perform a thorough system check to ensure optimal performance.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Commissioning</h3>
+                    <p>After installation, we'll commission the system and provide you with a full demonstration. We'll also train you on how to operate and maintain your new heat pump.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h3>Ongoing Support</h3>
+                    <p>We're here for you long after the installation is complete. Our team offers ongoing support and maintenance services to ensure your heat pump continues to perform at its best.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to enhance your comfort?</h2>
+            <p>Contact our heat pump specialists today for expert advice and a free, no-obligation quote.</p>
+            <div class="cta-button-container">
+                <a href="../contact.html" class="btn btn-primary"><span>Request a Free Quote</span></a>
+                <a href="tel:+6433771546" class="btn btn-secondary"><span>Call Us: 03 377 1546</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <img src="../images/Capture-One-Catalog0815.jpg" alt="Kings Electrical Logo">
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, Christchurch</p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+6433771546">03 377 1546</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@kingselectrical.co.nz">info@kingselectrical.co.nz</a></p>
+                </div>
+                <div class="footer-hours">
+                    <h3>Hours</h3>
+                    <p>Monday - Friday: 7:30am - 5:00pm</p>
+                    <p>Saturday: 8:00am - 1:00pm</p>
+                    <p>Sunday: Closed</p>
+                </div>
+                <div class="footer-social">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Kings Electrical. All rights reserved.</p>
+                <ul class="footer-links">
+                    <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="../terms-of-service.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', function() {
+                // Close all other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+    });
+
+    function calculateHeatPumpSize() {
+        // Get input values
+        const length = parseFloat(document.getElementById('roomLength').value);
+        const width = parseFloat(document.getElementById('roomWidth').value);
+        const height = parseFloat(document.getElementById('ceilingHeight').value);
+        const insulation = document.getElementById('insulation').value;
+        const windows = document.getElementById('windows').value;
+        const climate = document.getElementById('climate').value;
+
+        // Calculate room volume in cubic meters
+        const roomVolume = length * width * height;
+        const floorArea = length * width;
+
+        // Base capacity calculation (watts per square meter)
+        let baseCapacity = 100; // Base watts per square meter
+
+        // Adjust for insulation
+        const insulationFactors = {
+            poor: 1.3,
+            average: 1.0,
+            good: 0.8,
+            excellent: 0.7
+        };
+
+        // Adjust for windows
+        const windowFactors = {
+            small: 1.0,
+            medium: 1.1,
+            large: 1.2
+        };
+
+        // Adjust for climate
+        const climateFactors = {
+            mild: 0.9,
+            moderate: 1.0,
+            cold: 1.2
+        };
+
+        // Calculate total capacity needed
+        let totalCapacity = floorArea * baseCapacity;
+        totalCapacity *= insulationFactors[insulation];
+        totalCapacity *= windowFactors[windows];
+        totalCapacity *= climateFactors[climate];
+
+        // Convert to kW
+        const capacityKW = totalCapacity / 1000;
+
+        // Round to nearest 0.5 kW
+        const recommendedSize = Math.ceil(capacityKW * 2) / 2;
+
+        // Prepare the result message
+        let resultMessage = `
+            <h3>Recommended Heat Pump Size</h3>
+            <p>Based on your room specifications (${floorArea.toFixed(1)} m²):</p>
+            <h4>${recommendedSize.toFixed(1)} kW</h4>
+            <p><small>Note: This is an estimate. Factors like sun exposure, building materials, and specific usage patterns may affect the ideal size. We recommend consulting with our experts for a precise assessment.</small></p>
+        `;
+
+        // Display the result
+        const resultDiv = document.getElementById('calculatorResult');
+        resultDiv.innerHTML = resultMessage;
+        resultDiv.classList.add('show');
+    }
+    </script>
+</body>
+</html> 

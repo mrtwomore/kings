@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Project Advisor | Kings Electrical</title>
+    <meta name="description" content="Get expert advice on your electrical project with our free, no-obligation consultation service.">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Additional styles for Consultation page */
+        .consultation-section {
+            padding: 60px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .consultation-intro {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            text-align: center;
+        }
+        
+        .consultation-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+        
+        @media (max-width: 768px) {
+            .consultation-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .consultation-benefits {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
+        
+        .benefit-item {
+            display: flex;
+            margin-bottom: 25px;
+        }
+        
+        .benefit-icon {
+            flex: 0 0 50px;
+            height: 50px;
+            background: rgba(238, 114, 3, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ee7203;
+            font-size: 1.5rem;
+            margin-right: 20px;
+        }
+        
+        .benefit-content h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .consultation-form-container {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
+        
+        .consultation-form-header {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .consultation-form .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .consultation-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        .consultation-form input,
+        .consultation-form select,
+        .consultation-form textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+        
+        .consultation-form textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .form-note {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        .testimonial-slider {
+            margin-top: 60px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
+        
+        .testimonial-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .advisor-section {
+            margin-top: 60px;
+            text-align: center;
+        }
+        
+        .advisor-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .advisor-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .advisor-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .advisor-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .advisor-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .advisor-content {
+            padding: 20px;
+        }
+        
+        .advisor-content h3 {
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+        
+        .advisor-role {
+            color: #ee7203;
+            font-weight: 500;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .advisor-content p {
+            margin-bottom: 0;
+        }
+        
+        .faq-section {
+            margin-top: 60px;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 40px auto 0;
+        }
+        
+        .faq-item {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+        
+        .faq-question:hover {
+            background-color: rgba(238, 114, 3, 0.05);
+        }
+        
+        .faq-question i {
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 0 20px 20px;
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu Overlay -->
+    <div class="menu-overlay"></div>
+    
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" class="logo">
+                    <img src="images/Capture-One-Catalog0815.jpg" alt="Kings Electrical Logo">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="has-dropdown">
+                        <a href="services.html">Services</a>
+                        <ul class="dropdown">
+                            <li><a href="services/heat-pump-solutions.html">Heat Pump Solutions</a></li>
+                            <li><a href="services/electrical-services.html">Electrical Services</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-contact">
+                <a href="tel:+6433771546" class="phone-number"><i class="fas fa-phone"></i> 03 377 1546</a>
+                <a href="contact.html" class="btn btn-primary"><span>Contact Us</span></a>
+                <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Consultation Section -->
+    <section class="consultation-section">
+        <div class="container">
+            <div class="consultation-intro">
+                <h1>Your Free Electrical Project Advisor</h1>
+                <p>Get expert guidance on your electrical project without any pressure or obligation. Our experienced advisors are here to help you make informed decisions, not to sell you services you don't need.</p>
+            </div>
+            
+            <div class="consultation-grid">
+                <div class="consultation-benefits">
+                    <h2>How Our Project Advisors Help You</h2>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Expert Guidance</h3>
+                            <p>Get personalized advice from certified electricians with years of experience in residential and commercial projects.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Budget Planning</h3>
+                            <p>Understand all costs upfront with transparent pricing and options to fit your budget without compromising on quality or safety.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Project Roadmap</h3>
+                            <p>Get a clear timeline and step-by-step plan for your project, so you know exactly what to expect from start to finish.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Safety Assurance</h3>
+                            <p>Rest easy knowing your electrical work will be done to the highest safety standards and comply with all regulations.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>No Pressure Promise</h3>
+                            <p>We're here to advise, not to pressure. Take your time to decide what's best for you after receiving our recommendations.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="consultation-form-container">
+                    <div class="consultation-form-header">
+                        <h2>Book Your Free Consultation</h2>
+                        <p>Fill out the form below and one of our project advisors will contact you within 24 hours to schedule your free consultation.</p>
+                    </div>
+                    
+                    <form id="consultationForm" class="consultation-form">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="project-type">Project Type</label>
+                            <select id="project-type" name="project-type">
+                                <option value="">Select Project Type</option>
+                                <option value="new-installation">New Installation</option>
+                                <option value="renovation">Renovation/Rewiring</option>
+                                <option value="heat-pump">Heat Pump Installation</option>
+                                <option value="safety">Safety Inspection/Repairs</option>
+                                <option value="efficiency">Energy Efficiency Upgrade</option>
+                                <option value="commercial">Commercial Project</option>
+                                <option value="not-sure">Not Sure (Need Advice)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Tell us about your project or concerns</label>
+                            <textarea id="message" name="message"></textarea>
+                            <p class="form-note">The more details you provide, the better we can prepare for your consultation.</p>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="preferred-time">Preferred Contact Time</label>
+                            <select id="preferred-time" name="preferred-time">
+                                <option value="">Select Preferred Time</option>
+                                <option value="morning">Morning (8am - 12pm)</option>
+                                <option value="afternoon">Afternoon (12pm - 5pm)</option>
+                                <option value="evening">Evening (5pm - 7pm)</option>
+                                <option value="any">Any Time</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%;"><span>Book My Free Consultation</span></button>
+                        <p class="form-note" style="text-align: center; margin-top: 15px;">No obligation, no pressure, just expert advice.</p>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="testimonial-slider">
+                <div class="testimonial-header">
+                    <h2>What Our Clients Say About Our Advisors</h2>
+                </div>
+                
+                <div class="testimonial-slides">
+                    <div class="testimonial-slide active">
+                        <blockquote>
+                            <p>"I was completely lost about what heat pump would work best for my home. The project advisor from Kings Electrical took the time to explain all my options in plain English, helped me understand the costs involved, and never once made me feel pressured to buy. I'm so glad I reached out for their advice!"</p>
+                            <cite>- Sarah Johnson, Homeowner in Merivale</cite>
+                        </blockquote>
+                    </div>
+                    
+                    <div class="testimonial-slide">
+                        <blockquote>
+                            <p>"As a first-time business owner, I had no idea what electrical work my new shop needed. My project advisor walked me through everything step by step, helped me prioritize what was essential vs. what could wait, and worked within my tight budget. Their guidance was invaluable."</p>
+                            <cite>- Michael Williams, Small Business Owner in Riccarton</cite>
+                        </blockquote>
+                    </div>
+                    
+                    <div class="testimonial-slide">
+                        <blockquote>
+                            <p>"We were planning a major home renovation and were overwhelmed by the electrical aspects. Our Kings Electrical advisor created a detailed plan that our builder could follow, identified potential issues before they became problems, and saved us thousands in the process."</p>
+                            <cite>- David and Emma Thompson, Homeowners in Cashmere</cite>
+                        </blockquote>
+                    </div>
+                </div>
+                
+                <div class="testimonial-dots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                </div>
+            </div>
+            
+            <div class="advisor-section">
+                <h2>Meet Our Project Advisors</h2>
+                <p>Our team of experienced electrical experts is here to guide you through your project from start to finish.</p>
+                
+                <div class="advisor-grid">
+                    <div class="advisor-card">
+                        <div class="advisor-image">
+                            <img src="images/Capture-One-Catalog0317.jpg" alt="John Davis">
+                        </div>
+                        <div class="advisor-content">
+                            <h3>John Davis</h3>
+                            <span class="advisor-role">Senior Electrical Advisor</span>
+                            <p>With over 15 years of experience in residential and commercial electrical work, John specializes in helping clients find energy-efficient solutions.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="advisor-card">
+                        <div class="advisor-image">
+                            <img src="images/Capture-One-Catalog0477.jpg" alt="Sarah Wilson">
+                        </div>
+                        <div class="advisor-content">
+                            <h3>Sarah Wilson</h3>
+                            <span class="advisor-role">Heat Pump Specialist</span>
+                            <p>Sarah's expertise in HVAC systems and heat pump technology helps clients find the perfect climate control solutions for their homes and businesses.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="advisor-card">
+                        <div class="advisor-image">
+                            <img src="images/Capture-One-Catalog0490-e1722552518279.jpg" alt="Mike Thompson">
+                        </div>
+                        <div class="advisor-content">
+                            <h3>Mike Thompson</h3>
+                            <span class="advisor-role">Commercial Project Advisor</span>
+                            <p>Specializing in commercial electrical systems, Mike helps business owners navigate complex projects with efficiency and cost-effectiveness.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-section">
+                <h2 style="text-align: center;">Frequently Asked Questions</h2>
+                
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Is the consultation really free?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, absolutely! Our consultation service is completely free with no obligation to hire us afterward. We believe in providing value upfront and helping you make informed decisions about your electrical needs.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>How long does a consultation typically take?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Most consultations take between 30-60 minutes, depending on the complexity of your project. For larger projects, we may recommend a site visit which could take a bit longer to ensure we understand all aspects of your needs.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>What should I prepare before the consultation?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>It's helpful to have a general idea of your project goals, budget range, and timeline. If you have any existing electrical plans, recent power bills (for efficiency consultations), or photos of the areas involved, these can be very useful during our discussion.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>What happens after the consultation?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>After your consultation, we'll provide you with a detailed proposal including recommended solutions, pricing options, and a project timeline. You're free to take your time reviewing this information with no pressure to proceed. If you decide to move forward, we'll schedule your project at a time that works for you.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Can I get a consultation for a small project?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Absolutely! We provide consultations for projects of all sizes, from simple installations to complete electrical system overhauls. No project is too small for our advisors to help with.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="about.html#team">Our Team</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="services/commercial-electrical.html">Commercial Electrical</a></li>
+                        <li><a href="services/residential-electrical.html">Residential Electrical</a></li>
+                        <li><a href="services/heat-pump-solutions.html">Heat Pump Solutions</a></li>
+                        <li><a href="services/emergency-services.html">Emergency Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul class="contact-details">
+                        <li><i class="fas fa-phone"></i> <a href="tel:+6433771546">03 377 1546</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@kingselectrical.co.nz">info@kingselectrical.co.nz</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Main Street, Christchurch</li>
+                    </ul>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Kings Electrical. All rights reserved.</p>
+                <ul class="footer-links">
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms-of-service.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', function() {
+                // Close all other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+        
+        // Testimonial Slider
+        const dots = document.querySelectorAll('.testimonial-dots .dot');
+        const slides = document.querySelectorAll('.testimonial-slide');
+        
+        dots.forEach(dot => {
+            dot.addEventListener('click', function() {
+                const slideIndex = this.dataset.slide;
+                
+                // Remove active class from all dots and slides
+                dots.forEach(d => d.classList.remove('active'));
+                slides.forEach(s => s.classList.remove('active'));
+                
+                // Add active class to current dot and slide
+                this.classList.add('active');
+                slides[slideIndex].classList.add('active');
+            });
+        });
+        
+        // Form submission
+        const consultationForm = document.getElementById('consultationForm');
+        
+        consultationForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Here you would normally send the form data to your server
+            // For demonstration, we'll just show a success message
+            
+            alert('Thank you for booking a consultation! One of our project advisors will contact you within 24 hours to schedule your free consultation.');
+            consultationForm.reset();
+        });
+    });
+    </script>
+</body>
+</html> 

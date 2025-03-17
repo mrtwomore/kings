@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #e63946;
+  --secondary-color: #1d3557;
+  --accent-color: #457b9d;
+  --light-color: #f1faee;
+  --dark-color: #1d3557;
+  --gray-color: #6c757d;
+  --success-color: #28a745;
+  --warning-color: #ffc107;
+  --danger-color: #dc3545;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  font-family: var(--font-open-sans);
+  color: var(--dark-color);
+  background-color: #ffffff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-montserrat);
+  font-weight: 600;
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .btn {
+    @apply inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md shadow-sm transition-colors duration-200;
+  }
+  
+  .btn-primary {
+    @apply bg-[var(--primary-color)] text-white hover:bg-[#d32836];
+  }
+  
+  .btn-secondary {
+    @apply bg-[var(--secondary-color)] text-white hover:bg-[#152a45];
+  }
+  
+  .btn-outline {
+    @apply bg-transparent border-[var(--primary-color)] text-[var(--primary-color)] hover:bg-[var(--primary-color)] hover:text-white;
+  }
+  
+  .btn-white {
+    @apply bg-white text-[var(--primary-color)] hover:bg-[var(--light-color)];
+  }
+  
+  .btn-outline-white {
+    @apply bg-transparent border-2 border-white text-white hover:bg-white hover:text-[var(--primary-color)];
+  }
+}
