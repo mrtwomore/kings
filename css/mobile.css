@@ -72,6 +72,89 @@
     input, select, textarea {
         font-size: 16px !important; /* Prevents iOS zoom on focus */
     }
+
+    /* Service Page Content Optimization */
+    .service-section {
+        padding: 40px 0 !important;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+    }
+
+    .service-image {
+        margin-bottom: 20px !important;
+    }
+
+    /* Collapsible service sections for mobile */
+    .service-content {
+        position: relative !important;
+    }
+
+    .service-content h2 {
+        cursor: pointer !important;
+        padding-right: 30px !important;
+        position: relative !important;
+    }
+
+    .service-content h2:after {
+        content: '+' !important;
+        position: absolute !important;
+        right: 0 !important;
+        top: 0 !important;
+        font-size: 1.5rem !important;
+        color: var(--primary-color) !important;
+        transition: transform 0.3s ease !important;
+    }
+
+    .service-content.active h2:after {
+        content: '-' !important;
+    }
+
+    .service-content p:first-of-type {
+        display: block !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 2 !important;
+        -webkit-box-orient: vertical !important;
+        margin-bottom: 10px !important;
+    }
+
+    .service-content p:not(:first-of-type),
+    .service-content ul,
+    .service-content .btn {
+        display: none !important;
+    }
+
+    .service-content.active p {
+        display: block !important;
+        -webkit-line-clamp: unset !important;
+        overflow: visible !important;
+    }
+
+    .service-content.active ul,
+    .service-content.active .btn {
+        display: block !important;
+    }
+
+    /* Process steps optimization */
+    .process-step {
+        flex: 1 1 100% !important;
+        max-width: 100% !important;
+        margin-bottom: 20px !important;
+    }
+
+    /* Testimonials optimization */
+    .testimonials-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* FAQ optimization */
+    .faq-question {
+        font-size: 1rem !important;
+    }
 }
 
 /* Small Mobile Devices (under 480px) */
@@ -113,32 +196,117 @@
     .mobile-menu-toggle {
         width: 40px !important;
         height: 40px !important;
-    }
-    
-    /* Fullscreen mobile menu */
-    .main-nav.active {
-        height: 100vh !important;
-        padding-top: 80px !important;
-    }
-    
-    .main-nav.active ul li {
-        margin-bottom: 20px !important;
-    }
-    
-    .main-nav.active ul li a {
-        font-size: 1.2rem !important;
-    }
-    
-    /* Improved dropdown handling */
-    .dropdown {
-        position: relative !important;
-        box-shadow: none !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
         background: transparent !important;
-        padding-left: 20px !important;
+        border: none !important;
+        cursor: pointer !important;
+        padding: 5px !important;
+        z-index: 1000 !important;
     }
     
-    .has-dropdown > a::after {
-        transform: rotate(90deg) !important;
+    .mobile-menu-toggle span {
+        display: block !important;
+        width: 24px !important;
+        height: 3px !important;
+        background-color: #333 !important;
+        margin: 3px 0 !important;
+        transition: all 0.3s ease !important;
+    }
+    
+    .mobile-menu-toggle.active span:nth-child(1) {
+        transform: translateY(6px) rotate(45deg) !important;
+    }
+    
+    .mobile-menu-toggle.active span:nth-child(2) {
+        opacity: 0 !important;
+    }
+    
+    .mobile-menu-toggle.active span:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg) !important;
+    }
+    
+    /* Main navigation on mobile */
+    .main-nav {
+        position: fixed !important;
+        top: 0 !important;
+        left: -100% !important;
+        width: 85% !important;
+        height: 100vh !important;
+        background-color: #fff !important;
+        box-shadow: 0 0 15px rgba(0,0,0,0.1) !important;
+        z-index: 999 !important;
+        transition: left 0.3s ease !important;
+        padding: 80px 20px 30px !important;
+        overflow-y: auto !important;
+    }
+    
+    .main-nav.active {
+        left: 0 !important;
+    }
+    
+    .main-nav ul {
+        display: block !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    .main-nav li {
+        margin-bottom: 10px !important;
+        padding: 0 !important;
+        display: block !important;
+        width: 100% !important;
+    }
+    
+    .main-nav a {
+        padding: 12px 0 !important;
+        display: block !important;
+        font-size: 1.1rem !important;
+        width: 100% !important;
+    }
+    
+    /* Dropdown styling */
+    .dropdown {
+        position: static !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        padding: 0 0 0 15px !important;
+        border-left: 2px solid #FF6B35 !important;
+        margin: 10px 0 10px 15px !important;
+        background: transparent !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        max-height: 0 !important;
+        overflow: hidden !important;
+        transition: max-height 0.3s ease !important;
+    }
+    
+    .dropdown.active {
+        max-height: 500px !important;
+    }
+    
+    /* Overlay for menu background */
+    .menu-overlay {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        background: rgba(0,0,0,0.6) !important;
+        z-index: 998 !important;
+        display: none !important;
+    }
+    
+    .menu-overlay.active {
+        display: block !important;
+    }
+    
+    /* Prevent scrolling when menu is open */
+    body.menu-open {
+        overflow: hidden !important;
     }
 }
 

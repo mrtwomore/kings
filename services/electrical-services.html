@@ -569,6 +569,7 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="../css/mobile.css">
 </head>
 <body>
     <!-- Menu Overlay -->
@@ -946,6 +947,8 @@
 
     <!-- JavaScript -->
     <script src="../js/main.js"></script>
+    <script src="../js/mobile-menu.js"></script>
+    <script src="../js/mobile-optimizations.js"></script>
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         // FAQ Accordion
@@ -966,6 +969,41 @@
                 item.classList.toggle('active');
             });
         });
+        
+        // Mobile content collapsing for service sections
+        if (window.innerWidth <= 768) {
+            const serviceContents = document.querySelectorAll('.service-content');
+            
+            serviceContents.forEach(content => {
+                const heading = content.querySelector('h2');
+                const firstParagraph = content.querySelector('p');
+                
+                // Add read more button after first paragraph
+                if (firstParagraph && !content.querySelector('.read-more-btn')) {
+                    const readMoreBtn = document.createElement('button');
+                    readMoreBtn.className = 'read-more-btn';
+                    readMoreBtn.textContent = 'Read More';
+                    readMoreBtn.style.cssText = 'background: transparent; color: #FF6B35; border: none; padding: 5px 0; font-weight: 600; cursor: pointer; font-size: 0.9rem; margin-top: -5px; margin-bottom: 15px; display: block;';
+                    firstParagraph.after(readMoreBtn);
+                    
+                    readMoreBtn.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        content.classList.toggle('active');
+                        this.textContent = content.classList.contains('active') ? 'Read Less' : 'Read More';
+                    });
+                }
+                
+                if (heading) {
+                    heading.addEventListener('click', function() {
+                        content.classList.toggle('active');
+                        const readMoreBtn = content.querySelector('.read-more-btn');
+                        if (readMoreBtn) {
+                            readMoreBtn.textContent = content.classList.contains('active') ? 'Read Less' : 'Read More';
+                        }
+                    });
+                }
+            });
+        }
     });
     </script>
 </body>
