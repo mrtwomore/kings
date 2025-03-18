@@ -1323,6 +1323,19 @@ button[type="submit"] {
     color: var(--secondary-color);
 }
 
+.footer-logo {
+    margin-bottom: 1.5rem;
+    max-width: 180px;
+}
+
+.footer-logo img {
+    width: 100%;
+    height: auto;
+    background-color: white;
+    padding: 5px;
+    border-radius: 4px;
+}
+
 .social-icons {
     display: flex;
     gap: 1rem;
