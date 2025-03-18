@@ -512,31 +512,40 @@ img {
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: 1rem 0;
+    padding: 0.75rem 0;
     transition: all 0.3s ease;
 }
 
 .site-header.scrolled {
     padding: 0.5rem 0;
-    background-color: rgba(255, 255, 255, 0.92);
+    background-color: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
 }
 
 .site-header .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.logo {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
 }
 
 .logo img {
-    height: 60px;
+    width: auto;
+    height: 50px;
     transition: height 0.3s ease;
 }
 
 .site-header.scrolled .logo img {
-    height: 50px;
+    height: 40px;
 }
 
 .main-nav ul {
@@ -1411,8 +1420,11 @@ button[type="submit"] {
     }
     
     .logo img {
-        max-width: 140px;
-        height: auto;
+        height: 40px;
+    }
+    
+    .site-header.scrolled .logo img {
+        height: 35px;
     }
     
     .main-nav {
