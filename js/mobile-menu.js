@@ -163,9 +163,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Sticky header behavior
+    // Simplified header behavior
     if (header) {
-        let lastScrollTop = 0;
         let scrollThrottleTimeout;
         const scrollThreshold = 50;
         
@@ -177,23 +176,15 @@ document.addEventListener('DOMContentLoaded', function() {
             scrollThrottleTimeout = setTimeout(() => {
                 const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
                 
-                // Add sticky class when scrolling down
+                // Simple scroll class toggle
                 if (currentScroll > scrollThreshold) {
                     header.classList.add('scrolled');
                 } else {
                     header.classList.remove('scrolled');
                 }
                 
-                // Hide header when scrolling down rapidly, show when scrolling up
-                if (currentScroll > lastScrollTop && currentScroll > 200 && Math.abs(currentScroll - lastScrollTop) > 50) {
-                    header.classList.add('header-hidden');
-                } else {
-                    header.classList.remove('header-hidden');
-                }
-                
-                lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
                 scrollThrottleTimeout = null;
-            }, 10); // Small throttle for smooth animation
+            }, 10);
         }, { passive: true });
     }
     
